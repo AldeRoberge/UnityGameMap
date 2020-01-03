@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0a/7060c394/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78327B6C-3C08-4CA5-975B-799474D7A953/6d/737f7aa0/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Utils/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/TileObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/TileLoc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/62/dfe8a2fb/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0b/f08e1d4f/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/10/5751410e/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameMapInteraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/TileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/06/845fc6c2/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/StaticAssetLoaderHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/BlobTileset.cs" />
+        <option value="$PROJECT_DIR$/Assets/TileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/ConnectedTiles/ConnectedObjectUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/TileLoc.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/Object.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/TileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Object.cs" />
+        <option value="$PROJECT_DIR$/Assets/ConnectedTiles.cs" />
+        <option value="$PROJECT_DIR$/Assets/Tiles.cs" />
+        <option value="$PROJECT_DIR$/Assets/TileObjects.cs" />
+        <option value="$PROJECT_DIR$/Assets/ConnectedTileObjects.cs" />
+        <option value="$PROJECT_DIR$/Assets/ConnectedTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/TileUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Objects/Tiles/TileObjectUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/TileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameMapInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameMap.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VpAudwUWDIPVsyUk0g36iAwTxx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="" />
+      <created>1577939892547</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577939892547</updated>
+      <workItem from="1577939915629" duration="7602000" />
+      <workItem from="1577948916090" duration="6824000" />
+      <workItem from="1578000468071" duration="3131000" />
+      <workItem from="1578003837596" duration="14356000" />
+      <workItem from="1578030342864" duration="6693000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state x="794" y="237" key="RiderGenerateDialog" timestamp="1577944230417">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="237" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577944230417" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1577940787243">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577940787243" />
+    <state x="637" y="119" width="646" height="801" key="find.popup" timestamp="1578032475537">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="637" y="119" width="646" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578032475537" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1577949563473">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577949563473" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578036583889">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578036583889" />
+  </component>
+</project>
