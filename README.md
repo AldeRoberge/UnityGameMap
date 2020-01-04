@@ -4,6 +4,7 @@ A wang tile game map. Features path building.
 It is mostly an implementation of the "Wang Tile System".
  
 http://www.cr31.co.uk/stagecast/wang/blob.html
+
 https://www.boristhebrave.com/2013/07/14/tileset-roundup/
 
 ![Tiling system](https://i.imgur.com/PatmkMz.gif)
