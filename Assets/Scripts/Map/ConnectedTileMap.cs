@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Objects.Tiles;
-using Objects.Tiles.ConnectedTiles;
+using Map.Objects.Tiles;
+using Map.Objects.Tiles.ConnectedTiles;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Map
 {
     public class ConnectedTileMap : MonoBehaviour
     {

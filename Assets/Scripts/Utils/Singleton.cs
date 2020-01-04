@@ -1,7 +1,7 @@
-﻿﻿namespace DefaultNamespace
+﻿﻿using UnityEngine;
+
+ namespace Utils
 {
-    using UnityEngine;
- 
     /// <summary>
     /// Inherit from this base class to create a singleton.
     /// e.g. public class MyClassName : Singleton<MyClassName> {}

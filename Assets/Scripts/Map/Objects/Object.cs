@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Objects
+namespace Map.Objects
 {
     public class Object : MonoBehaviour
     {

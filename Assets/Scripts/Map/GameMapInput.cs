@@ -1,10 +1,10 @@
-﻿using Objects.Tiles;
-using Objects.Tiles.ConnectedTiles;
+﻿using Map.Objects.Tiles;
+using Map.Objects.Tiles.ConnectedTiles;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Map
 {
-    public class GameMapInteraction : MonoBehaviour
+    public class GameMapInput : MonoBehaviour
     {
         public int pathObjectTypeToBuild = 0;
 

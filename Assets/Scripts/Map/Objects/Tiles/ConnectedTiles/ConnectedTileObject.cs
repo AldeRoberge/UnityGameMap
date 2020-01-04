@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Objects.Tiles.ConnectedTiles
+namespace Map.Objects.Tiles.ConnectedTiles
 {
     public class ConnectedTileObject : TileObject
     {

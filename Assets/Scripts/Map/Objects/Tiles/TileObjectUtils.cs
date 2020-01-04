@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Objects.Tiles
+namespace Map.Objects.Tiles
 {
     public static class TileUtils
     {

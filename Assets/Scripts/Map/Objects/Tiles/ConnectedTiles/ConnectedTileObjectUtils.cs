@@ -1,4 +1,4 @@
-﻿namespace Objects.Tiles.ConnectedTiles
+﻿namespace Map.Objects.Tiles.ConnectedTiles
 {
     public class ConnectedObjectUtils
     {

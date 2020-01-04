@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Objects.Tiles;
+using Map.Objects.Tiles;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Map
 {
     public class TileMap : MonoBehaviour
     {
