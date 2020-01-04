@@ -12,22 +12,22 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0a/7060c394/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78327B6C-3C08-4CA5-975B-799474D7A953/6d/737f7aa0/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Utils/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/TileObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/TileLoc.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/62/dfe8a2fb/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0b/f08e1d4f/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/10/5751410e/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameMapInteraction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/TileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMapInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/06/845fc6c2/Random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -53,10 +53,17 @@
         <option value="$PROJECT_DIR$/Assets/TileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/GameMapInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMapInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/ConnectedTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1VpAudwUWDIPVsyUk0g36iAwTxx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -110,6 +117,7 @@
       <workItem from="1578000468071" duration="3131000" />
       <workItem from="1578003837596" duration="14356000" />
       <workItem from="1578030342864" duration="6693000" />
+      <workItem from="1578108423474" duration="1050000" />
     </task>
     <servers />
   </component>

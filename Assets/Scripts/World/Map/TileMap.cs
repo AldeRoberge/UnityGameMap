@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Map
 {
+    
+    /**
+     * A math of tiles (ground).
+     */
     public class TileMap : MonoBehaviour
     {
         public Dictionary<TileLoc, TileObject> Tiles;

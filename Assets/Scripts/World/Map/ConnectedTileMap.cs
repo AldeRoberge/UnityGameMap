@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace Map
 {
+    
+    /**
+     * A map of connected tiles (paths).
+     */
     public class ConnectedTileMap : MonoBehaviour
     {
         public Dictionary<TileLoc, ConnectedTileObject> ConnectedTiles;
@@ -27,13 +31,11 @@ namespace Map
 
             return cto;
         }
-
-
+        
         public ConnectedTileObject GetConnectedObjectAt(TileLoc tileLoc)
         {
             return !ConnectedTiles.ContainsKey(tileLoc) ? null : ConnectedTiles[tileLoc];
         }
-        
         
         public void RemoveConnectedTileAt(TileLoc tileLoc)
         {
@@ -41,7 +43,6 @@ namespace Map
             {
                 Destroy(ConnectedTiles[tileLoc].gameObject);
                 ConnectedTiles.Remove(tileLoc);
-                
             }
             else
             {

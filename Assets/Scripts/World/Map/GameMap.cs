@@ -4,6 +4,13 @@ using TileLoc = Map.Objects.Tiles.TileLoc;
 
 namespace Map
 {
+    /**
+     * GameMap is a parent of the following types :
+     
+     *     TileMap : Tiles (ground)
+     *     ConnectedTileMap : Connected Tiles (paths)
+     *     ObjectMap : Objects (players, buildings, etc.)
+     */
     public class GameMap : Singleton<GameMap>
     {
         public TileMap tileMap;
@@ -11,21 +18,36 @@ namespace Map
 
         public void Start()
         {
-            InitTileObjects();
-            InitConnectedTileObjects();
-
+            InitTileMap();
+            InitConnectedTileMap();
+            
+            
             InitGameMapInteraction();
 
             GenerateFakeObjectAtRandomPost();
-
-
         }
 
+        
+        
+        private void InitTileMap()
+        {
+            tileMap = new GameObject("TileObjects").AddComponent<TileMap>();
+            tileMap.transform.parent = transform;
+        }
+
+        private void InitConnectedTileMap()
+        {
+            connectedTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedTileMap>();
+            connectedTileMap.transform.parent = transform;
+        }
+        
+        
+        
         private void GenerateFakeObjectAtRandomPost()
         {
             TileLoc loc = new TileLoc(Random.Range(0, TileMap.SquaredMapSize), Random.Range(0, TileMap.SquaredMapSize));
         
-        
+            //GameObject donut = Resources.I TODO
         
         
         }
@@ -37,17 +59,6 @@ namespace Map
             gameMapInput.connectedTileMap = connectedTileMap;
         }
 
-        private void InitTileObjects()
-        {
-            tileMap = new GameObject("TileObjects").AddComponent<TileMap>();
-            tileMap.transform.parent = transform;
-        }
-
-        private void InitConnectedTileObjects()
-        {
-            connectedTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedTileMap>();
-            connectedTileMap.transform.parent = transform;
-        }
 
         /**
      * Utility method used by both ConnectedTileObjects (paths) and TileObjects (other) to create a basic tile.

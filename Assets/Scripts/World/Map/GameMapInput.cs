@@ -10,7 +10,7 @@ namespace Map
 
         public TileMap tileMap;
         public ConnectedTileMap connectedTileMap;
-        
+
         void Update()
         {
             CheckIfPaletteChanged();
@@ -31,36 +31,37 @@ namespace Map
 
                     if (to == null) return;
 
-                    Debug.Log("Hit " + to + "!");
-
-                    ConnectedTileObject cto = Hit.collider.gameObject.GetComponent<ConnectedTileObject>();
-
-                    bool shouldPlace = true;
-
-                    if (cto != null)
-                    {
-                        Debug.Log("Already a ConnectedTile in place. Removing.");
-                        connectedTileMap.RemoveConnectedTileAt(cto.tileLoc);
-
-                        if (cto.objectType == pathObjectTypeToBuild)
-                        {
-                            // Do not place new path.
-                            shouldPlace = false;
-                        }
-                    }
-
-                    if (shouldPlace)
-                    {
-                        Debug.Log("Placing a new tile at pos.");
-
-                        ConnectedTileObject newCto =
-                            connectedTileMap.CreateConnectedTileObject(to.tileLoc, pathObjectTypeToBuild);
-                    }
-
-                    // Update the surrounding tiles
-                    UpdateNeigboursOf(to.tileLoc);
+                    PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
                 }
             }
+        }
+
+        private void PlaceObjectOfTypeAt(int objectType, TileLoc loc)
+        {
+            ConnectedTileObject cto = connectedTileMap.GetConnectedObjectAt(loc);
+
+            bool shouldPlace = true;
+
+            if (cto != null)
+            {
+                Debug.Log("Removing underlying tile of type " + objectType + " at " + loc + ".");
+                connectedTileMap.RemoveConnectedTileAt(cto.tileLoc);
+
+                if (cto.objectType == pathObjectTypeToBuild)
+                {
+                    // Do not place new path.
+                    shouldPlace = false;
+                }
+            }
+
+            if (shouldPlace)
+            {
+                Debug.Log("Placing a new tile of type " + objectType + " at " + loc + ".");
+                connectedTileMap.CreateConnectedTileObject(loc, pathObjectTypeToBuild);
+            }
+
+            // Update the surrounding tiles
+            UpdateNeigboursOf(loc);
         }
 
         private void CheckIfPaletteChanged()
