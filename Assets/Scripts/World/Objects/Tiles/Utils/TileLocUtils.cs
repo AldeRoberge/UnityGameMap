@@ -1,6 +1,8 @@
-﻿namespace Map.Objects.Tiles.ConnectedTiles
+﻿using Map.Objects.Tiles;
+
+namespace World.Objects.Tiles.ConnectedTiles
 {
-    public class ConnectedObjectUtils
+    public class TilesUtils
     {
         /**
 	
@@ -24,11 +26,16 @@
         public static readonly TileLoc SouthEast = new TileLoc(1, -1);
 
 
-        public static TileLoc[] Around =
+        public static TileLoc[] Cardinal =
         {
             NorthWest, North, NorthEast,
             West, Center, East,
             SouthWest, South, SouthEast
+        };
+
+        public static TileLoc[] ImmediateCardinal =
+        {
+            North, West, East, South
         };
     }
 }

@@ -16,6 +16,13 @@ namespace Map.Objects.Tiles
             this.y = y;
         }
 
+        public TileLoc(TileLoc tileLoc)
+        {
+            this.x = tileLoc.x;
+            this.y = tileLoc.y;
+        }
+        
+
         public TileLoc RelativeTo(TileLoc tileLoc)
         {
             if (tileLoc == null)

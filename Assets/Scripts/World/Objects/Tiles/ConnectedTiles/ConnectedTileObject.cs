@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using World.Objects.Tiles.ConnectedTiles;
 
 namespace Map.Objects.Tiles.ConnectedTiles
 {
@@ -27,7 +28,7 @@ namespace Map.Objects.Tiles.ConnectedTiles
 
         public bool IsOfSameType(TileLoc otherTile)
         {
-            ConnectedTileObject cto = GameMap.Instance.connectedTileMap.GetConnectedObjectAt(otherTile);
+            ConnectedTileObject cto = GameMap.Instance.connectedTileMap.GetConnectedTileAt(otherTile);
 
             if (cto == null)
             {
@@ -58,17 +59,17 @@ namespace Map.Objects.Tiles.ConnectedTiles
         */
         public int NeighbourTilesWeight()
         {
-            bool northWest = IsOfSameType(ConnectedObjectUtils.NorthWest.RelativeTo(tileLoc));
-            bool north = IsOfSameType(ConnectedObjectUtils.North.RelativeTo(tileLoc));
-            bool northEast = IsOfSameType(ConnectedObjectUtils.NorthEast.RelativeTo(tileLoc));
+            bool northWest = IsOfSameType(TilesUtils.NorthWest.RelativeTo(tileLoc));
+            bool north = IsOfSameType(TilesUtils.North.RelativeTo(tileLoc));
+            bool northEast = IsOfSameType(TilesUtils.NorthEast.RelativeTo(tileLoc));
 
-            bool west = IsOfSameType(ConnectedObjectUtils.West.RelativeTo(tileLoc));
+            bool west = IsOfSameType(TilesUtils.West.RelativeTo(tileLoc));
             // center is omitted
-            bool east = IsOfSameType(ConnectedObjectUtils.East.RelativeTo(tileLoc));
+            bool east = IsOfSameType(TilesUtils.East.RelativeTo(tileLoc));
 
-            bool southWest = IsOfSameType(ConnectedObjectUtils.SouthWest.RelativeTo(tileLoc));
-            bool south = IsOfSameType(ConnectedObjectUtils.South.RelativeTo(tileLoc));
-            bool southEast = IsOfSameType(ConnectedObjectUtils.SouthEast.RelativeTo(tileLoc));
+            bool southWest = IsOfSameType(TilesUtils.SouthWest.RelativeTo(tileLoc));
+            bool south = IsOfSameType(TilesUtils.South.RelativeTo(tileLoc));
+            bool southEast = IsOfSameType(TilesUtils.SouthEast.RelativeTo(tileLoc));
 
             if (!west || !north)
                 northWest = false;
@@ -121,8 +122,6 @@ namespace Map.Objects.Tiles.ConnectedTiles
                 // Tile without rotation
                 if (weight == blobAndRotationVariant.Key)
                 {
-                    Debug.Log("Its texture is " + weight);
-
                     textureName = blobAndRotationVariant.Key.ToString();
                     break;
                 }
@@ -169,7 +168,7 @@ namespace Map.Objects.Tiles.ConnectedTiles
                 Debug.LogError("Texture for path '" + actualResourcePath + "' is null.");
             }
 
-            this.SetTexture(texture);
+            SetTexture(texture);
 
             gameObject.transform.rotation = Quaternion.identity;
             gameObject.transform.Rotate(new Vector3(0, rotation, 0));

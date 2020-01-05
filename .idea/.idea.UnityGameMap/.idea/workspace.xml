@@ -20,14 +20,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/62/dfe8a2fb/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0b/f08e1d4f/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/10/5751410e/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMapInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0CD2A33E-E0A5-4FC6-B14F-E3EA49461506/cb/64048cdd/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/06/845fc6c2/Random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -56,9 +57,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMapInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/ConnectedTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileObjectUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMapInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
       </list>
     </option>
   </component>
@@ -83,10 +93,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1148">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1148" />
       <method v="2" />
     </configuration>
   </component>
@@ -118,6 +128,8 @@
       <workItem from="1578003837596" duration="14356000" />
       <workItem from="1578030342864" duration="6693000" />
       <workItem from="1578108423474" duration="1050000" />
+      <workItem from="1578180444343" duration="4659000" />
+      <workItem from="1578198778480" duration="6426000" />
     </task>
     <servers />
   </component>
@@ -126,7 +138,50 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1578201634034">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578201634034" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1578201634033">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578201634033" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1578201634033">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578201634033" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1578201634034">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578201634034" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1578201639348">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578201639348" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1578201639347">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578201639347" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1578201639347">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578201639347" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1578201639348">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578201639348" />
     <state x="794" y="237" key="RiderGenerateDialog" timestamp="1577944230417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -135,14 +190,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577940787243" />
-    <state x="637" y="119" width="646" height="801" key="find.popup" timestamp="1578032475537">
+    <state x="637" y="119" width="646" height="801" key="find.popup" timestamp="1578200457008">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="637" y="119" width="646" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578032475537" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1577949563473">
+    <state x="637" y="119" width="646" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578200457008" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1578201591753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577949563473" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578201591753" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578036583889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

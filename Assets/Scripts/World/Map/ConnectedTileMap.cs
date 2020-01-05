@@ -5,17 +5,15 @@ using UnityEngine;
 
 namespace Map
 {
-    
     /**
      * A map of connected tiles (paths).
      */
     public class ConnectedTileMap : MonoBehaviour
     {
         public Dictionary<TileLoc, ConnectedTileObject> ConnectedTiles;
-        
+
         public void Start()
         {
-            this.transform.position += new Vector3(0f, 0.05f,0f);
             ConnectedTiles = new Dictionary<TileLoc, ConnectedTileObject>();
         }
 
@@ -31,12 +29,12 @@ namespace Map
 
             return cto;
         }
-        
-        public ConnectedTileObject GetConnectedObjectAt(TileLoc tileLoc)
+
+        public ConnectedTileObject GetConnectedTileAt(TileLoc tileLoc)
         {
             return !ConnectedTiles.ContainsKey(tileLoc) ? null : ConnectedTiles[tileLoc];
         }
-        
+
         public void RemoveConnectedTileAt(TileLoc tileLoc)
         {
             if (ConnectedTiles.ContainsKey(tileLoc))
@@ -49,6 +47,5 @@ namespace Map
                 Debug.Log("No tileLoc at pos.");
             }
         }
-        
     }
 }
