@@ -229,9 +229,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 921850647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d4f645ab38a464598567d299ab198a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d53114043d368e4b82cd64e6ebe0dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 0}
+  tileMap: {fileID: 0}
+  connectedTileMap: {fileID: 0}
 --- !u!4 &921850649
 Transform:
   m_ObjectHideFlags: 0

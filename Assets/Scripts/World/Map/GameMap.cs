@@ -16,29 +16,20 @@ namespace Map
      */
     public class GameMap : Singleton<GameMap>
     {
-
         public GameMapInput input;
-        
+
         public TileMap tileMap;
         public ConnectedTileMap connectedTileMap;
-        
 
         public const int SquaredMapSize = 10;
 
-
-        
-        
-        
-        
         public void Start()
         {
             InitGameMapInteraction();
 
             InitConnectedTileMap();
             InitTileMap();
-            
 
-    
             GenerateFakeObjectAtRandomPost();
         }
 
@@ -46,36 +37,29 @@ namespace Map
         {
             input = new GameObject("GameMapInput").AddComponent<GameMapInput>();
             input.transform.parent = transform;
-            input.transform.position = new Vector3(0f, 0.1f,0f);
+            input.transform.position = new Vector3(0f, 0.1f, 0f);
         }
 
         private void InitConnectedTileMap()
         {
             connectedTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedTileMap>();
             connectedTileMap.transform.parent = transform;
-            connectedTileMap.transform.position = new Vector3(0f, 0.05f,0f);
+            connectedTileMap.transform.position = new Vector3(0f, 0.05f, 0f);
         }
-        
+
         private void InitTileMap()
         {
             tileMap = new GameObject("TileObjects").AddComponent<TileMap>();
             tileMap.transform.parent = transform;
-            tileMap.transform.position = new Vector3(0f, 0f,0f);
+            tileMap.transform.position = new Vector3(0f, 0f, 0f);
         }
 
-        
-        
         private void GenerateFakeObjectAtRandomPost()
         {
             TileLoc loc = new TileLoc(Random.Range(0, SquaredMapSize), Random.Range(0, SquaredMapSize));
-        
+
             //GameObject donut = Resources.I TODO
-        
-        
         }
-
-
-
 
         /**
      * Utility method used by both ConnectedTileObjects (paths) and TileObjects (other) to create a basic tile.
@@ -91,8 +75,7 @@ namespace Map
             return tile;
         }
     }
-    
-    
+
     public class GameMapInput : MonoBehaviour
     {
         public int pathObjectTypeToBuild = 0;
@@ -108,7 +91,6 @@ namespace Map
             connectedTileMap = GameMap.Instance.connectedTileMap;
             interactionMap = this.gameObject.AddComponent<InteractionTileMap>();
         }
-
 
         void Update()
         {
@@ -131,7 +113,6 @@ namespace Map
                 }
             }
 
-
             if (Input.GetMouseButtonDown(0))
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -148,7 +129,6 @@ namespace Map
                 }
             }
         }
-
 
         private void PlaceObjectOfTypeAt(int objectType, TileLoc loc)
         {
@@ -227,5 +207,4 @@ namespace Map
             }
         }
     }
-    
 }

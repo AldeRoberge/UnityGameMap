@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\courr\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\courr\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_UnityGameMap.159148362.00" t="ExcludeRecursive" />
-    <e p="C:\Users\courr\Desktop\UnityGameMap" t="IncludeRecursive">
+    <e p="C:\Users\rotmg\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\rotmg\.Rider2019.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\rotmg\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rotmg\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_UnityGameMap.-1794021518.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rotmg\Desktop\UnityGameMap" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
