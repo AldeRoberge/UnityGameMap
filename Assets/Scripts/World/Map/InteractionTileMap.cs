@@ -5,7 +5,6 @@ using World.Objects.Tiles.ConnectedTiles;
 
 namespace Map
 {
-    
     /**
      * The interaction tile map is a tilemap that floats above the actual tilemap,
      * showing the user the currently selected tile and a grid.
@@ -16,22 +15,37 @@ namespace Map
     {
         public TileObject selectedTileObject;
 
-
         public Texture2D arrow;
 
+        public static Texture2D gridTexture;
+        public static Texture2D selectedTexture;
+        public static Texture2D clearTexture;
 
+        public new void Start()
+        {
+            base.Start();
+            gridTexture = Resources.Load<Texture2D>("Sprites/Ground/Tiles/Grid");
+            selectedTexture = Resources.Load<Texture2D>("Sprites/Ground/Tiles/Selected");
+            clearTexture = Resources.Load<Texture2D>("Sprites/Ground/Tiles/Clear");
+        }
+
+        /**
+         * Sets a tile to show the "selected" texture.
+         */
         public void SetSelectedTile(TileLoc tileLoc)
         {
             if (selectedTileObject != null)
             {
-                selectedTileObject.HideSelected();
+                //Hide previously selected tile
+                selectedTileObject.SetTexture(clearTexture);
             }
 
             TileObject to;
 
+            // Create if it doesn't exist
             if (!Tiles.ContainsKey(tileLoc))
             {
-                to = CreateTileObject(tileLoc, 0);
+                to = CreateTileObject(tileLoc, 1);
             }
             else
             {
@@ -39,52 +53,7 @@ namespace Map
             }
 
             selectedTileObject = to;
-            selectedTileObject.ShowSelected();
-
-
-            foreach (TileObject tileObject in GameMap.Instance.tileMap.Tiles.Values)
-            {
-                tileObject.HideOverlay();
-            }
-
-            // Update neighbours
-            foreach (TileLoc pos in TilesUtils.ImmediateCardinal)
-            {
-                TileObject c = GameMap.Instance.tileMap.GetTileAt(pos.RelativeTo(selectedTileObject.tileLoc));
-
-                if (c != null)
-                {
-                    int rotation = 0;
-
-                    if (arrow == null)
-                    {
-                        arrow = Resources.Load<Texture2D>("Sprites/Ground/Interaction/Arrow");
-                    }
-
-                    if (pos == TilesUtils.North)
-                    {
-                        rotation = 180;
-                    }
-                    else if (pos == TilesUtils.East)
-                    {
-                        rotation = 270;
-                    }
-                    else if (pos == TilesUtils.South)
-                    {
-                        rotation = 0;
-                    }
-                    else if (pos == TilesUtils.West)
-                    {
-                        rotation = 90;
-                    }
-
-
-                    c.SetOverlay(arrow);
-                    c.SetRotation(rotation);
-
-                    //c.ShowArrow();
-                }
-            }
+            selectedTileObject.SetTexture(selectedTexture);
         }
 
         private bool isShowingGrid;
@@ -104,23 +73,37 @@ namespace Map
             {
                 TileObject interactionTileMapTile;
 
+                /**
+                 * Check if tile exists, if not will create one.
+                 */
                 if (!Tiles.ContainsKey(to.tileLoc))
                 {
-                    // Will create a new interaction tile for every tiles in the GameMap tilemap.
-                    interactionTileMapTile = CreateTileObject(to.tileLoc, 1);
+                    interactionTileMapTile = CreateTileObject(to.tileLoc, 2);
                 }
                 else
                 {
                     interactionTileMapTile = Tiles[to.tileLoc];
                 }
 
+
                 if (interactionTileMapTile == selectedTileObject)
                 {
-                    //Skip the "selected" tile.
+                    // Skip selected tile
                     continue;
                 }
+                
 
-                interactionTileMapTile.EnableGrid(isShowingGrid);
+                /**
+                 * Set the texture to grid if enabled, nothing is disabled.
+                 */
+                if (isShowingGrid)
+                {
+                    interactionTileMapTile.SetTexture(gridTexture);
+                }
+                else
+                {
+                    interactionTileMapTile.SetTexture(clearTexture);
+                }
             }
         }
     }

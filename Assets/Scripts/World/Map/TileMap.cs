@@ -17,6 +17,15 @@ namespace Map
         {
             Debug.Log("Hey");
             Tiles = new Dictionary<TileLoc, TileObject>();
+            
+            for (int x = 0; x < GameMap.SquaredMapSize; x++)
+            {
+                for (int y = 0; y < GameMap.SquaredMapSize; y++)
+                {
+                    CreateTileObject(new TileLoc(x, y), 0);
+                }
+            }
+            
         }
 
         public TileObject CreateTileObject(TileLoc loc, int type = -1)
@@ -25,18 +34,7 @@ namespace Map
 
             TileObject c = tile.AddComponent<TileObject>();
 
-            //TODO replace, this is the objectLibrary way of loading
-            //tile.sprite = ObjectLibrary.getTileTexture(g.Type).texture;
             
-            Texture2D tex = Resources.Load<Texture2D>("Sprites/Ground/Tiles/" + ObjectTypeToTexture(type));
-
-            if (tex == null)
-            {
-                Debug.Log("Null tex with image " + ObjectTypeToTexture(type));
-                Debug.Log("Path : 'Sprites/Ground/Tiles/" + ObjectTypeToTexture(type) + "'.");
-            }
-
-            c.SetTexture(tex);
             c.objectType = type;
             c.tileLoc = loc;
             Tiles.Add(loc, c);
@@ -44,20 +42,6 @@ namespace Map
             return c;
         }
 
-        private string ObjectTypeToTexture(int objectType)
-        {
-            switch (objectType)
-            {
-                case -1:
-                    return "Default";
-                case 0:
-                    return "Grass";
-                case 1:
-                    return "Clear";
-                default:
-                    return "";
-            }
-        }
 
         public TileObject GetTileAt(TileLoc tileLoc)
         {

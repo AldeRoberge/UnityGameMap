@@ -102,17 +102,6 @@ namespace Map
                 interactionMap.ToggleGrid();
             }
 
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                for (int x = 0; x < GameMap.SquaredMapSize; x++)
-                {
-                    for (int y = 0; y < GameMap.SquaredMapSize; y++)
-                    {
-                        tileMap.CreateTileObject(new TileLoc(x, y), 0);
-                    }
-                }
-            }
-
             if (Input.GetMouseButtonDown(0))
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
