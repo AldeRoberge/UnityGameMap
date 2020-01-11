@@ -170,6 +170,9 @@ namespace World.Map
             {
                 if (!isMovingObject)
                 {
+                    
+                    Debug.Log("Mouse released. Was not carrying an object.");
+                    
                     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                     RaycastHit Hit;
@@ -178,30 +181,45 @@ namespace World.Map
                     {
                         if (editing == EditType.Path)
                         {
+                            Debug.Log("Currently editing paths.");
+                            
                             TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
 
                             if (to == null)
                             {
+                                Debug.Log("No tile selected.");
+                                
                                 interactionMap.UnselectTile();
-                                ScrollAndPinch.Instance.Enable();
+                                CameraHandler.Instance.Enable();
                             }
                             else
                             {
+                                Debug.Log("Selected new tile.");
+                                
                                 interactionMap.SetSelectedTile(to.tileLoc);
                                 PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
                             }
                         }
                         else if (editing == EditType.Objects)
                         {
+                            
+                            Debug.Log("Currently editing objects.");
+                            
                             Object to = Hit.collider.gameObject.GetComponent<Object>();
 
                             if (to == null)
                             {
+                                
+                                Debug.Log("No object selected");
+                                
                                 UnselectObjects();
-                                ScrollAndPinch.Instance.Enable();
+                                CameraHandler.Instance.Enable();
                             }
                             else
                             {
+                                
+                                Debug.Log("Selected new object.");
+                                
                                 SelectObject(to);
                             }
                         }
@@ -237,11 +255,11 @@ namespace World.Map
                     {
                         ResetObjectMovement();
                         UnselectObjects();
-                        ScrollAndPinch.Instance.Enable();
+                        CameraHandler.Instance.Enable();
                     }
                     else
                     {
-                        ScrollAndPinch.Instance.Disable();
+                        CameraHandler.Instance.Disable();
                     }
                 }
             }

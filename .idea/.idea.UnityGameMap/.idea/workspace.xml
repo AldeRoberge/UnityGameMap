@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CameraHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CameraHandler.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameMap.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +29,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/77/50eed0fa/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/RectTransformExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/WorldPosData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CameraHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/f4/017ce60c/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3857BD5A-EA97-4F8D-A859-C4D7F6EAAC9B/38/1f668879/TextAlignmentOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScrollAndPinch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.2.11f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ScrollAndPinch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -58,9 +55,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Objects/Object.cs" />
-        <option value="$PROJECT_DIR$/Assets/ConnectedTiles.cs" />
-        <option value="$PROJECT_DIR$/Assets/Tiles.cs" />
         <option value="$PROJECT_DIR$/Assets/TileObjects.cs" />
         <option value="$PROJECT_DIR$/Assets/ConnectedTileObjects.cs" />
         <option value="$PROJECT_DIR$/Assets/ConnectedTileMap.cs" />
@@ -94,7 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/UnityOutlineFX/UnityOutlineManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/SelectionBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/RectTransformExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" />
@@ -103,12 +96,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
         <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PanZoom.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PerspectivePan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
         <option value="$PROJECT_DIR$/Assets/ScrollAndPinch.cs" />
+        <option value="$PROJECT_DIR$/Assets/MobileScrollAndPinch.cs" />
+        <option value="$PROJECT_DIR$/Assets/HandleCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraHandler.cs" />
       </list>
     </option>
   </component>
@@ -178,6 +175,7 @@
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
       <workItem from="1578696819866" duration="24247000" />
+      <workItem from="1578769634099" duration="2240000" />
     </task>
     <servers />
   </component>

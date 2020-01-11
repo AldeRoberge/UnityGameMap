@@ -15,6 +15,11 @@ namespace World.Map
     {
         public TileObject selectedTileObject;
 
+        public bool debugInteraction = true;
+
+
+
+        
         public new void Start()
         {
 
@@ -35,6 +40,9 @@ namespace World.Map
          */
         public void SetSelectedTile(TileLoc tileLoc)
         {
+            
+            Debug.Log("Set selected tile '" + tileLoc + "'.");
+            
             UnselectTile();
 
             TileObject to;
@@ -55,6 +63,9 @@ namespace World.Map
 
         public void UnselectTile()
         {
+            
+            Debug.Log("Unselecting tile.");
+            
             if (selectedTileObject != null)
             {
                 //Hide previously selected tile. Replaces with grid if grid is shown.
@@ -66,6 +77,9 @@ namespace World.Map
 
         public void ToggleGrid()
         {
+            
+            
+            
             if (!isShowingGrid)
             {
                 isShowingGrid = true;
@@ -74,6 +88,8 @@ namespace World.Map
             {
                 isShowingGrid = false;
             }
+            
+            Debug.Log("Is showing grid : " + isShowingGrid);
 
             foreach (TileObject to in GameMap.Instance.tileMap.Tiles.Values)
             {
