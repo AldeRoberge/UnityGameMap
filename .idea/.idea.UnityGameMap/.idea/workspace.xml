@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameMap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Grid.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Grid.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +190,7 @@
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
       <workItem from="1578696819866" duration="24247000" />
-      <workItem from="1578769634099" duration="14861000" />
+      <workItem from="1578769634099" duration="16200000" />
     </task>
     <servers />
   </component>

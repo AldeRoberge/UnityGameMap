@@ -51,14 +51,14 @@ namespace World.Map
         {
             input = new GameObject("GameMapInput").AddComponent<GameMapInput>();
             input.transform.parent = transform;
-            input.transform.position = new Vector3(0f, 0.05f, 0f);
+            input.transform.position = new Vector3(0f, 0.01f, 0f);
         }
 
         private void InitConnectedTileMap()
         {
             connectedGenericTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedGenericTileMap>();
             connectedGenericTileMap.transform.parent = transform;
-            connectedGenericTileMap.transform.position = new Vector3(0f, 0.01f, 0f);
+            connectedGenericTileMap.transform.position = new Vector3(0f, 0.05f, 0f);
         }
 
         private void InitTileMap()

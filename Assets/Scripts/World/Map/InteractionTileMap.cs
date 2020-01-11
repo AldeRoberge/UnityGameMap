@@ -62,7 +62,15 @@ namespace World.Map
             if (selectedTileObject != null)
             {
                 //Hide previously selected tile. Replaces with grid if grid is shown.
-                selectedTileObject.SetObjectType(isShowingGrid ? UITileObjectTypes.GRID : UITileObjectTypes.CLEAR);
+
+                if (isShowingGrid && (selectedTileObject.tileLoc.x % 2) == (selectedTileObject.tileLoc.y % 2))
+                {
+                    selectedTileObject.SetObjectType(UITileObjectTypes.GRID);
+                }
+                else
+                {
+                    selectedTileObject.SetObjectType(UITileObjectTypes.CLEAR);
+                }
             }
         }
 
