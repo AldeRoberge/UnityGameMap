@@ -37,7 +37,7 @@ public class UIManager : Singleton<UIManager>
         button.transform.SetParent(gameObject.GetComponentInChildren<HorizontalLayoutGroup>().transform, false);
     }
 
-    private void ClearButtons()
+    public void ClearButtons()
     {
         foreach (GameObject o in buttons)
         {

@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/Packet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/Packet.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/WorldPosData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/WorldPosData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/RectTransformExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/RectTransformExtensions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/UI/Rotate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/UI/Rotate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameMap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/UI/Button/Rotate.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/UI/Button/Rotate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityOutlineFX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityOutlineFX/UnityOutlineExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityOutlineFX/UnityOutlineExample.unity.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,14 +84,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Materials/Outline.shader" />
         <option value="$PROJECT_DIR$/Assets/UnityOutlineFX/UnityOutlineManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/SelectionBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/RectTransformExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" />
@@ -117,6 +97,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
         <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
       </list>
     </option>
   </component>
@@ -185,7 +168,7 @@
       <workItem from="1578180444343" duration="4659000" />
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
-      <workItem from="1578696819866" duration="17437000" />
+      <workItem from="1578696819866" duration="21146000" />
     </task>
     <servers />
   </component>

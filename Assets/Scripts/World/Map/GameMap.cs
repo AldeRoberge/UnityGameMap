@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Utils;
 using Visuals;
 using World.Map.ConnectedTiles;
 using World.Map.Objects;
 using World.Map.Tiles;
 using Object = World.Map.Objects.Object;
+using Random = UnityEngine.Random;
 using TileLoc = World.Map.Tiles.TileLoc;
 
 namespace World.Map
@@ -132,75 +135,165 @@ namespace World.Map
             selectedObjects = new List<Object>();
         }
 
-        
+        private Object moving;
+        private GameObject tileMouseClickOrigin;
+        private GameObject tileMousePosition;
+
+        public bool isMovingObject = false;
+
+        public bool ShowMouseInteraction = false;
+
         /**
          * Registers events done to objects and tiles.
          */
         void Update()
         {
-            CheckIfPaletteChanged();
-
+            // Toggle Grid
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Showing grid...");
                 interactionMap.ToggleGrid();
             }
 
-            if (Input.GetMouseButtonDown(0))
+            // Mouse was released, mouse did not move more than one tile. Selecting object/tile.
+            if (Input.GetMouseButtonUp(0))
             {
+                if (!isMovingObject)
+                {
+                    var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                    RaycastHit Hit;
+
+                    if (Physics.Raycast(ray, out Hit))
+                    {
+                        if (editing == EditType.Path)
+                        {
+                            TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
+
+                            if (to == null)
+                            {
+                                interactionMap.UnselectTile();
+                            }
+                            else
+                            {
+                                interactionMap.SetSelectedTile(to.tileLoc);
+                                PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
+                            }
+                        }
+                        else if (editing == EditType.Objects)
+                        {
+                            Object to = Hit.collider.gameObject.GetComponent<Object>();
+
+                            if (to == null)
+                            {
+                                UnselectObjects();
+                            }
+                            else
+                            {
+                                SelectObject(to);
+                            }
+                        }
+                    }
+                }
+
+                ResetObjectMovement();
+            }
+
+            // Mouse is pressed, create the mouse position helpers.
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                tileMouseClickOrigin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                tileMouseClickOrigin.GetComponent<Renderer>().material.color = Color.red;
+                tileMouseClickOrigin.GetComponent<Renderer>().enabled = ShowMouseInteraction;
+                tileMouseClickOrigin.transform.position = new Vector3(0f, 0f, 0f);
+
+                tileMousePosition = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                tileMousePosition.GetComponent<Renderer>().material.color = Color.blue;
+                tileMousePosition.GetComponent<Renderer>().enabled = ShowMouseInteraction;
+                tileMousePosition.transform.position = new Vector3(0f, 0f, 0f);
+
+                // Init origin pos
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                RaycastHit Hit;
-
-                if (Physics.Raycast(ray, out Hit))
+                if (Physics.Raycast(ray, out var Hit))
                 {
-                    if (editing == EditType.Path)
+                    tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
+                    moving = Hit.collider.gameObject.GetComponent<Object>();
+                }
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                if (tileMouseClickOrigin != null)
+                {
+                    var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(ray, out var Hit))
                     {
-                        TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
+                        tileMousePosition.transform.position = Hit.collider.gameObject.transform.position;
 
-                        if (to == null) return;
-
-                        interactionMap.SetSelectedTile(to.tileLoc);
-                        PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
-                    }
-                    else if (editing == EditType.Objects)
-                    {
-                        Object to = Hit.collider.gameObject.GetComponent<Object>();
-
-                        if (to == null)
+                        // Calculate distance between 
+                        if (Vector3.Distance(tileMouseClickOrigin.transform.position, tileMousePosition.transform.position) > 0.01)
                         {
-                            return;
+                            isMovingObject = true;
                         }
 
-                        Selecteable s = Hit.collider.gameObject.GetComponent<Selecteable>();
-
-                        if (s != null)
+                        if (isMovingObject && moving != null)
                         {
-                            
-                            // Remove other selected objects
-                            foreach (Object o in selectedObjects)
-                            {
-                                o.GetComponent<Selecteable>().SetSelected(false);
-                            }
-                            
-                            selectedObjects.Clear();
-
-                            // Set selected to true
-                            s.SetSelected(true);
-
-                            if (!selectedObjects.Contains(to))
-                            {
-                                selectedObjects.Add(to);
-                            }
-                            
-                            UIManager.Instance.ShowOptionsFor(to);
-
+                            moving.transform.position = tileMousePosition.transform.position;
                         }
-
-                        Debug.Log("Successfully selected object.");
                     }
                 }
             }
+
+            return;
+        }
+
+        private void ResetObjectMovement()
+        {
+            if (tileMouseClickOrigin != null)
+            {
+                Destroy(tileMousePosition);
+                Destroy(tileMouseClickOrigin);
+            }
+
+            isMovingObject = false;
+            moving = null;
+        }
+
+        private void SelectObject(Object to)
+        {
+            Selecteable s = to.gameObject.GetComponent<Selecteable>();
+
+            if (s != null)
+            {
+                UnselectObjects();
+
+                selectedObjects.Clear();
+
+                // Set selected to true
+                s.SetSelected(true);
+
+                if (!selectedObjects.Contains(to))
+                {
+                    selectedObjects.Add(to);
+                }
+
+                UIManager.Instance.ShowOptionsFor(to);
+            }
+
+            Debug.Log("Successfully selected object.");
+        }
+
+        private void UnselectObjects()
+        {
+            // Remove other selected objects
+            foreach (Object o in selectedObjects)
+            {
+                o.GetComponent<Selecteable>().SetSelected(false);
+            }
+
+            UIManager.Instance.ClearButtons();
         }
 
         private void PlaceObjectOfTypeAt(string id, TileLoc loc)
@@ -229,16 +322,6 @@ namespace World.Map
 
             // Update the surrounding tiles
             UpdateNeigboursOf(loc);
-        }
-
-        private void CheckIfPaletteChanged()
-        {
-            bool updated = false;
-
-            if (updated)
-            {
-                Debug.Log("Newly selected palette : " + pathObjectTypeToBuild);
-            }
         }
 
         private void UpdateNeigboursOf(TileLoc tileLoc)

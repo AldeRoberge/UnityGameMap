@@ -4,8 +4,6 @@ using World.Map.Tiles;
 
 namespace World.Map
 {
-
-    
     /**
      * The interaction tile map is a tilemap that floats above the actual tilemap,
      * showing the user the currently selected tile and a grid.
@@ -15,7 +13,6 @@ namespace World.Map
     public class InteractionTileMap : TileMap
     {
         public TileObject selectedTileObject;
-
 
         public new void Start()
         {
@@ -27,11 +24,7 @@ namespace World.Map
          */
         public void SetSelectedTile(TileLoc tileLoc)
         {
-            if (selectedTileObject != null)
-            {
-                //Hide previously selected tile. Replaces with grid if grid is shown.
-                selectedTileObject.SetObjectType(isShowingGrid ? UITileObjectTypes.GRID : UITileObjectTypes.CLEAR);
-            }
+            UnselectTile();
 
             TileObject to;
 
@@ -47,6 +40,15 @@ namespace World.Map
 
             selectedTileObject = to;
             selectedTileObject.SetObjectType(UITileObjectTypes.SELECTED);
+        }
+
+        public void UnselectTile()
+        {
+            if (selectedTileObject != null)
+            {
+                //Hide previously selected tile. Replaces with grid if grid is shown.
+                selectedTileObject.SetObjectType(isShowingGrid ? UITileObjectTypes.GRID : UITileObjectTypes.CLEAR);
+            }
         }
 
         private bool isShowingGrid;

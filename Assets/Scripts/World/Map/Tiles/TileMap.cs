@@ -18,7 +18,7 @@ namespace World.Map.Tiles
             {
                 for (int y = 0; y < GameMap.SquaredMapSize; y++)
                 {
-                    CreateTileObject(new TileLoc(x, y));
+                    CreateTileObject(new TileLoc(x, y), UITileObjectTypes.GRASS);
                 }
             }
         }
