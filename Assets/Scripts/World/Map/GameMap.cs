@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Controls;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utils;
@@ -170,9 +171,8 @@ namespace World.Map
             {
                 if (!isMovingObject)
                 {
-                    
                     Debug.Log("Mouse released. Was not carrying an object.");
-                    
+
                     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                     RaycastHit Hit;
@@ -182,50 +182,46 @@ namespace World.Map
                         if (editing == EditType.Path)
                         {
                             Debug.Log("Currently editing paths.");
-                            
+
                             TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
 
                             if (to == null)
                             {
                                 Debug.Log("No tile selected.");
-                                
+
                                 interactionMap.UnselectTile();
-                                CameraHandler.Instance.Enable();
+                                Controls.Controls.Instance.Enable();
                             }
                             else
                             {
                                 Debug.Log("Selected new tile.");
-                                
+
                                 interactionMap.SetSelectedTile(to.tileLoc);
                                 PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
                             }
                         }
                         else if (editing == EditType.Objects)
                         {
-                            
                             Debug.Log("Currently editing objects.");
-                            
+
                             Object to = Hit.collider.gameObject.GetComponent<Object>();
 
                             if (to == null)
                             {
-                                
                                 Debug.Log("No object selected");
-                                
+
                                 UnselectObjects();
-                                CameraHandler.Instance.Enable();
+                                Controls.Controls.Instance.Enable();
                             }
                             else
                             {
-                                
                                 Debug.Log("Selected new object.");
-                                
+
                                 SelectObject(to);
                             }
                         }
                     }
                 }
-
 
                 ResetObjectMovement();
             }
@@ -250,16 +246,17 @@ namespace World.Map
                 {
                     tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
                     moving = Hit.collider.gameObject.GetComponent<Object>();
+                    SelectObject(moving);
 
                     if (moving is TileObject)
                     {
                         ResetObjectMovement();
                         UnselectObjects();
-                        CameraHandler.Instance.Enable();
+                        Controls.Controls.Instance.Enable();
                     }
                     else
                     {
-                        CameraHandler.Instance.Disable();
+                        Controls.Controls.Instance.Disable();
                     }
                 }
             }
@@ -301,8 +298,6 @@ namespace World.Map
 
             isMovingObject = false;
             moving = null;
-            
-            
         }
 
         private void SelectObject(Object to)

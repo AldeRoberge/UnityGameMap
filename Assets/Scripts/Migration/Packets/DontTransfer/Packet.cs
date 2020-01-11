@@ -1,4 +1,4 @@
-﻿namespace Migration.Packets
+﻿namespace Migration.Packets.DontTransfer
 {
     public class Packet
     {
