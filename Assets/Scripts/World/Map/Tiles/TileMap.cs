@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using Map.Objects.Tiles;
-using Map.Objects.Tiles.ConnectedTiles;
 using UnityEngine;
-using World.Objects.Tiles.ConnectedTiles;
 
-namespace Map
+namespace World.Map.Tiles
 {
     /**
      * A math of tiles (ground).

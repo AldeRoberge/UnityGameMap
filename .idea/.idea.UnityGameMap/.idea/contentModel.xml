@@ -14,22 +14,20 @@
           </e>
           <e p="World" t="Include">
             <e p="Map" t="Include">
-              <e p="ConnectedTileMap.cs" t="Include" />
+              <e p="ConnectedTiles" t="Include">
+                <e p="ConnectedTileMap.cs" t="Include" />
+                <e p="ConnectedTileObject.cs" t="Include" />
+              </e>
               <e p="GameMap.cs" t="Include" />
               <e p="InteractionTileMap.cs" t="Include" />
-              <e p="TileMap.cs" t="Include" />
-            </e>
-            <e p="Objects" t="Include">
-              <e p="Object.cs" t="Include" />
+              <e p="Objects" t="Include">
+                <e p="Object.cs" t="Include" />
+                <e p="ObjectMap.cs" t="Include" />
+              </e>
               <e p="Tiles" t="Include">
-                <e p="ConnectedTiles" t="Include">
-                  <e p="ConnectedTileObject.cs" t="Include" />
-                </e>
                 <e p="TileLoc.cs" t="Include" />
+                <e p="TileMap.cs" t="Include" />
                 <e p="TileObject.cs" t="Include" />
-                <e p="Utils" t="Include">
-                  <e p="TileLocUtils.cs" t="Include" />
-                </e>
               </e>
             </e>
             <e p="Orientation.cs" t="Include" />

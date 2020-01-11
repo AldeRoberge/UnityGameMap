@@ -2,13 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Grid.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Grid.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Selected.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Selected.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameMap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Object.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Object.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,17 +42,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/f4/017ce60c/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -60,22 +83,32 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/ConnectedTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileObjectUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMapInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/TileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/3DObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Test.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Object.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileLocUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/FBXObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ObjectMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1VpAudwUWDIPVsyUk0g36iAwTxx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -137,7 +170,7 @@
       <workItem from="1578180444343" duration="4659000" />
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
-      <workItem from="1578696819866" duration="4017000" />
+      <workItem from="1578696819866" duration="8042000" />
     </task>
     <servers />
   </component>

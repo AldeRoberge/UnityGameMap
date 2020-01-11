@@ -1,11 +1,11 @@
-﻿using Map.Objects.Tiles;
-using Map.Objects.Tiles.ConnectedTiles;
-using UnityEngine;
+﻿using UnityEngine;
 using Utils;
-using World.Objects.Tiles.ConnectedTiles;
-using TileLoc = Map.Objects.Tiles.TileLoc;
+using World.Map.ConnectedTiles;
+using World.Map.Objects;
+using World.Map.Tiles;
+using TileLoc = World.Map.Tiles.TileLoc;
 
-namespace Map
+namespace World.Map
 {
     /**
      * GameMap is a parent of the following types :
@@ -21,6 +21,8 @@ namespace Map
         public TileMap tileMap;
         public ConnectedTileMap connectedTileMap;
 
+        public ObjectMap objectMap;
+
         public const int SquaredMapSize = 10;
 
         public void Start()
@@ -30,7 +32,16 @@ namespace Map
             InitConnectedTileMap();
             InitTileMap();
 
+            InitObjectMap();
+
             GenerateFakeObjectAtRandomPost();
+        }
+
+        private void InitObjectMap()
+        {
+            objectMap = new GameObject("ObjectMap").AddComponent<ObjectMap>();
+            objectMap.transform.parent = transform;
+            objectMap.transform.position = new Vector3(0f, 0.1f, 0f);
         }
 
         private void InitGameMapInteraction()
@@ -73,6 +84,20 @@ namespace Map
             tile.transform.localPosition = new Vector3(loc.x, 0, loc.y);
 
             return tile;
+        }
+
+        public Vector3 GetWorldPos(TileLoc tileLoc)
+        {
+            TileObject tileAt = tileMap.GetTileAt(tileLoc);
+
+            if (tileMap.GetTileAt(tileLoc) != null)
+            {
+                return tileAt.transform.position;
+            }
+
+            Debug.LogError("Fatal error : Could not find tile at '" + tileLoc + "'.");
+
+            return new Vector3();
         }
     }
 
@@ -160,7 +185,7 @@ namespace Map
         private void UpdateNeigboursOf(TileLoc tileLoc)
         {
             // Update neighbours
-            foreach (TileLoc pos in TilesUtils.Cardinal)
+            foreach (TileLoc pos in ConnectedTileUtils.Cardinal)
             {
                 ConnectedTileObject c =
                     GameMap.Instance.connectedTileMap.GetConnectedTileAt(pos.RelativeTo(tileLoc));

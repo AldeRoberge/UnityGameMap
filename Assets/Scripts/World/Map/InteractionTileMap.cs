@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using Map.Objects.Tiles;
-using UnityEngine;
-using World.Objects.Tiles.ConnectedTiles;
+﻿using UnityEngine;
+using World.Map.Tiles;
 
-namespace Map
+namespace World.Map
 {
     /**
      * The interaction tile map is a tilemap that floats above the actual tilemap,
@@ -14,8 +12,6 @@ namespace Map
     public class InteractionTileMap : TileMap
     {
         public TileObject selectedTileObject;
-
-        public Texture2D arrow;
 
         public new void Start()
         {

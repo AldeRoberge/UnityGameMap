@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Map.Objects.Tiles
+namespace World.Map.Tiles
 {
     /**
  * A TileLoc is an immutable tile location (x, y) in game represented by integers.
