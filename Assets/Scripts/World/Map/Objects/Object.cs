@@ -20,13 +20,10 @@ namespace World.Map.Objects
             var rotation = transform.rotation;
             transform.rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y + 90f, rotation.eulerAngles.z);
         }
-    }
 
-    public enum Orientation
-    {
-        Up = 0,
-        Right = 90,
-        Down = 180,
-        Left = 270
+        public int GetRotation()
+        {
+            return (int) transform.rotation.y;
+        }
     }
 }
