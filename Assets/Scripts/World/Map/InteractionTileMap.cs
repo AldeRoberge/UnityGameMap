@@ -20,7 +20,7 @@ namespace World.Map
         public new void Start()
         {
             base.Start();
-            
+
             for (int x = 0; x < SquaredMapSize; x++)
             {
                 for (int y = 0; y < SquaredMapSize; y++)
@@ -70,19 +70,22 @@ namespace World.Map
 
         public void ToggleGrid()
         {
-            if (!isShowingGrid)
-            {
-                isShowingGrid = true;
-            }
-            else
-            {
-                isShowingGrid = false;
-            }
+            SetGridIsVisible(!isShowingGrid);
+        }
+
+        public void SetGridIsVisible(bool isVisible)
+        {
+            isShowingGrid = isVisible;
 
             Debug.Log("Is showing grid : " + isShowingGrid);
 
+            // Allows for a "checkerboard" pattern.
+            bool placeThisOne = false;
+
             foreach (TileObject to in GameMap.Instance.tileMap.Tiles.Values)
             {
+                placeThisOne = (to.tileLoc.x % 2) == (to.tileLoc.y % 2);
+
                 TileObject interactionTileMapTile;
 
                 /**
@@ -105,8 +108,10 @@ namespace World.Map
 
                 /**
                  * Set the texture to grid if enabled, nothing is disabled.
+                 *
+                 * 
                  */
-                if (isShowingGrid)
+                if (isShowingGrid && placeThisOne)
                 {
                     interactionTileMapTile.SetObjectType(UITileObjectTypes.GRID);
                 }

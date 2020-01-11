@@ -44,21 +44,21 @@ namespace World.Map
         {
             objectMap = new GameObject("ObjectMap").AddComponent<ObjectMap>();
             objectMap.transform.parent = transform;
-            objectMap.transform.position = new Vector3(0f, 0.1f, 0f);
+            objectMap.transform.position = new Vector3(0f, 0f, 0f);
         }
 
         private void InitGameMapInteraction()
         {
             input = new GameObject("GameMapInput").AddComponent<GameMapInput>();
             input.transform.parent = transform;
-            input.transform.position = new Vector3(0f, 0.1f, 0f);
+            input.transform.position = new Vector3(0f, 0.05f, 0f);
         }
 
         private void InitConnectedTileMap()
         {
             connectedGenericTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedGenericTileMap>();
             connectedGenericTileMap.transform.parent = transform;
-            connectedGenericTileMap.transform.position = new Vector3(0f, 0.05f, 0f);
+            connectedGenericTileMap.transform.position = new Vector3(0f, 0.01f, 0f);
         }
 
         private void InitTileMap()
@@ -118,12 +118,6 @@ namespace World.Map
         }
     }
 
-    public enum EditType
-    {
-        Path,
-        Objects
-    }
-
     /**
      * Allows to click on objects, move them and build paths.
      */
@@ -137,8 +131,6 @@ namespace World.Map
         public ConnectedGenericTileMap connectedGenericTileMap;
         public ObjectMap objectMap;
 
-        public EditType editing = EditType.Path;
-
         public List<ThreeDimensionObject> selectedObjects; //This is a list, for in the future for multiple object selection.
 
         private ThreeDimensionObject moving;
@@ -147,10 +139,9 @@ namespace World.Map
 
         public bool isMovingObject = false;
 
-        public bool ShowMouseInteraction = true;
+        public bool ShowMouseInteraction = false;
         private bool WasLastClickOnUI;
 
-        
         public void Start()
         {
             tileMap = GameMap.Instance.tileMap;
@@ -162,37 +153,32 @@ namespace World.Map
             selectedObjects = new List<ThreeDimensionObject>();
         }
 
-
         /**
          * Registers events done to objects and tiles.
          */
         void Update()
         {
-            // Toggle Grid
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("Showing grid...");
-                interactionMap.ToggleGrid();
-            }
-
             // Mouse was released, mouse did not move more than one tile. Selecting object/tile.
             if (Input.GetMouseButtonUp(0))
             {
-                if (moving != null)
-                {
-                    // Actually send updated position of 'moving' to server.
-                    objectMap.MoveObjectTo(moving, GameMap.Instance.GetTileLocFromWorldPos(moving.transform.position));
-
-                    foreach (ThreeDimensionObject o in selectedObjects)
-                    {
-                        o.GetComponent<Selecteable>().Enable();
-                    }
-                }
-
                 if (WasLastClickOnUI)
                 {
                     WasLastClickOnUI = false;
                     return;
+                }
+
+                if (EditionModeHandler.Instance.editing == EditType.Objects)
+                {
+                    if (moving != null)
+                    {
+                        // Actually send updated position of 'moving' to server.
+                        objectMap.MoveObjectTo(moving, GameMap.Instance.GetTileLocFromWorldPos(moving.transform.position));
+
+                        foreach (ThreeDimensionObject o in selectedObjects)
+                        {
+                            o.GetComponent<Selecteable>().Enable();
+                        }
+                    }
                 }
 
                 if (!isMovingObject)
@@ -205,8 +191,10 @@ namespace World.Map
 
                     if (Physics.Raycast(ray, out Hit))
                     {
-                        if (editing == EditType.Path)
+                        if (EditionModeHandler.Instance.editing == EditType.Paths)
                         {
+                            Controls.Controls.Instance.Enable();
+
                             Debug.Log("Currently editing paths.");
 
                             TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
@@ -226,7 +214,7 @@ namespace World.Map
                                 PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
                             }
                         }
-                        else if (editing == EditType.Objects)
+                        else if (EditionModeHandler.Instance.editing == EditType.Objects)
                         {
                             Debug.Log("Currently editing objects.");
 
@@ -257,49 +245,56 @@ namespace World.Map
             // Mouse is pressed, create the mouse position helpers.
             if (Input.GetMouseButtonDown(0))
             {
-                if (EventSystem.current.IsPointerOverGameObject())
+                if (EditionModeHandler.Instance.editing == EditType.Paths)
                 {
-                    Debug.Log("Is over game object, skipping.");
-                    WasLastClickOnUI = true;
+                    Controls.Controls.Instance.Disable();
                 }
-                else
+                else if (EditionModeHandler.Instance.editing == EditType.Objects)
                 {
-                    Debug.Log("Showing tileMouse.");
-                    
-                    tileMouseClickOrigin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    tileMouseClickOrigin.GetComponent<Renderer>().material.color = Color.red;
-                    tileMouseClickOrigin.GetComponent<Renderer>().enabled = ShowMouseInteraction;
-                    tileMouseClickOrigin.transform.position = new Vector3(0f, 0f, 0f);
-                    tileMouseClickOrigin.transform.SetParent(this.gameObject.transform);
-
-                    tileMousePosition = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    tileMousePosition.GetComponent<Renderer>().material.color = Color.blue;
-                    tileMousePosition.GetComponent<Renderer>().enabled = ShowMouseInteraction;
-                    tileMousePosition.transform.position = new Vector3(0f, 0f, 0f);
-                    tileMousePosition.transform.SetParent(this.gameObject.transform);
-
-                    // Init origin pos
-                    var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                    if (Physics.Raycast(ray, out var Hit))
+                    if (EventSystem.current.IsPointerOverGameObject())
                     {
-                        tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
-                        moving = Hit.collider.gameObject.GetComponent<ThreeDimensionObject>();
+                        Debug.Log("Is over game object, skipping.");
+                        WasLastClickOnUI = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Showing tileMouse.");
 
-                        if (!(moving is ThreeDimensionObject))
+                        tileMouseClickOrigin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        tileMouseClickOrigin.GetComponent<Renderer>().material.color = Color.red;
+                        tileMouseClickOrigin.GetComponent<Renderer>().enabled = ShowMouseInteraction;
+                        tileMouseClickOrigin.transform.position = new Vector3(0f, 0f, 0f);
+                        tileMouseClickOrigin.transform.SetParent(this.gameObject.transform);
+
+                        tileMousePosition = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                        tileMousePosition.GetComponent<Renderer>().material.color = Color.blue;
+                        tileMousePosition.GetComponent<Renderer>().enabled = ShowMouseInteraction;
+                        tileMousePosition.transform.position = new Vector3(0f, 0f, 0f);
+                        tileMousePosition.transform.SetParent(this.gameObject.transform);
+
+                        // Init origin pos
+                        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                        if (Physics.Raycast(ray, out var Hit))
                         {
-                            Debug.Log("Probably moving a ground tile, so not moving.");
+                            tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
+                            moving = Hit.collider.gameObject.GetComponent<ThreeDimensionObject>();
 
-                            ResetObjectMovement();
-                            UnselectObjects();
-                            Controls.Controls.Instance.Enable();
-                        }
-                        else
-                        {
-                            Debug.Log("Moving object.");
+                            if (moving is null)
+                            {
+                                Debug.Log("Probably moving a ground tile, so not moving.");
 
-                            SelectObject(moving);
-                            Controls.Controls.Instance.Disable();
+                                ResetObjectMovement();
+                                UnselectObjects();
+                                Controls.Controls.Instance.Enable();
+                            }
+                            else
+                            {
+                                Debug.Log("Moving object.");
+
+                                SelectObject(moving);
+                                Controls.Controls.Instance.Disable();
+                            }
                         }
                     }
                 }
@@ -381,7 +376,7 @@ namespace World.Map
             }
         }
 
-        private void UnselectObjects()
+        public void UnselectObjects()
         {
             // Remove other selected objects
             foreach (Object o in selectedObjects)

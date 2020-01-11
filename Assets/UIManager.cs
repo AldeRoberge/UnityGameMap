@@ -14,6 +14,7 @@ public class UIManager : Singleton<UIManager>
     private Sprite buttonBackground;
 
     private Sprite rotateButtonSprite;
+    private Sprite informationButtonSprite;
 
     private List<GameObject> buttons;
 
@@ -21,6 +22,9 @@ public class UIManager : Singleton<UIManager>
     void Start()
     {
         rotateButtonSprite = Resources.Load<Sprite>("Sprites/UI/Button/Rotate");
+        informationButtonSprite = Resources.Load<Sprite>("Sprites/UI/Button/QuestionMark");
+        
+        
         buttonBackground = Resources.Load<Sprite>("Sprites/UI/Button/Button");
 
         buttons = new List<GameObject>();
@@ -30,6 +34,7 @@ public class UIManager : Singleton<UIManager>
     {
         ClearButtons();
         AddButton(GenerateRotateObjectButton(obj));
+        AddButton(GenerateInformationButton(obj));
     }
 
     public void AddButton(GameObject button)
@@ -60,6 +65,16 @@ public class UIManager : Singleton<UIManager>
             });
         });
     }
+    
+    public GameObject GenerateInformationButton(Object toRotate)
+    {
+        return GenerateButton("Information", informationButtonSprite, () =>
+        {
+            Debug.Log("Object pos : " + toRotate.tileLoc);
+            Debug.Log("Object type : " + toRotate.objectType);
+        });
+    }
+    
 
     public GameObject GenerateButton(string text, Sprite sprite, UnityAction onClick)
     {

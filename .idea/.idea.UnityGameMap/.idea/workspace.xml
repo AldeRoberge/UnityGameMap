@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/EnableableMonoBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/EnableableMonoBehaviour.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controls/DesktopControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/DesktopControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameMap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Grid.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Ground/Tiles/Grid.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,13 +66,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/8f/e51c37c5/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/EnableableMonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EditionModeHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/TileLoc.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/Utils/TileObjectUtils.cs" />
@@ -99,7 +97,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/Packet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/WorldPosData.cs" />
-        <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PanZoom.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PerspectivePan.cs" />
@@ -113,7 +110,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/3DObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ThreeDimensionObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/Controls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
@@ -122,8 +118,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/DesktopControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/EnableableMonoBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" />
+        <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/EditionModeHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
       </list>
     </option>
@@ -195,7 +194,7 @@
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
       <workItem from="1578696819866" duration="24247000" />
-      <workItem from="1578769634099" duration="10769000" />
+      <workItem from="1578769634099" duration="14861000" />
     </task>
     <servers />
   </component>
@@ -278,32 +277,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs</url>
-          <line>37</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" initialLine="39">
-            <startOffsets>
-              <option value="934" />
-            </startOffsets>
-            <endOffsets>
-              <option value="948" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs</url>
-          <line>187</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" initialLine="183">
-            <startOffsets>
-              <option value="5856" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5895" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
