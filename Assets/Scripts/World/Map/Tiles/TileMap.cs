@@ -12,14 +12,13 @@ namespace World.Map.Tiles
 
         public void Start()
         {
-            Debug.Log("Hey");
             Tiles = new Dictionary<TileLoc, TileObject>();
 
             for (int x = 0; x < GameMap.SquaredMapSize; x++)
             {
                 for (int y = 0; y < GameMap.SquaredMapSize; y++)
                 {
-                    CreateTileObject(new TileLoc(x, y), UITileObjectTypes.DEFAULT);
+                    CreateTileObject(new TileLoc(x, y));
                 }
             }
         }
@@ -29,7 +28,7 @@ namespace World.Map.Tiles
             GameObject tile = GameMap.Instance.CreateTileAt(loc, transform);
 
             TileObject c = tile.AddComponent<TileObject>();
-                
+
             c.SetObjectType(type);
             c.tileLoc = loc;
             Tiles.Add(loc, c);

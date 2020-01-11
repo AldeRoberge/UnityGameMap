@@ -21,7 +21,6 @@ namespace World.Map.Tiles
             this.x = tileLoc.x;
             this.y = tileLoc.y;
         }
-        
 
         public TileLoc RelativeTo(TileLoc tileLoc)
         {

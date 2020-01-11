@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Utils;
+using Visuals;
 using World.Map.ConnectedTiles;
 using World.Map.Objects;
 using World.Map.Tiles;
+using Object = World.Map.Objects.Object;
 using TileLoc = World.Map.Tiles.TileLoc;
 
 namespace World.Map
@@ -101,6 +104,12 @@ namespace World.Map
         }
     }
 
+    public enum EditType
+    {
+        Path,
+        Objects
+    }
+
     public class GameMapInput : MonoBehaviour
     {
         public string pathObjectTypeToBuild = "Path";
@@ -110,13 +119,23 @@ namespace World.Map
         public TileMap tileMap;
         public ConnectedTileMap connectedTileMap;
 
+        public EditType editing = EditType.Objects;
+
+        public List<Object> selectedObjects;
+
         public void Start()
         {
             tileMap = GameMap.Instance.tileMap;
             connectedTileMap = GameMap.Instance.connectedTileMap;
             interactionMap = this.gameObject.AddComponent<InteractionTileMap>();
+
+            selectedObjects = new List<Object>();
         }
 
+        
+        /**
+         * Registers events done to objects and tiles.
+         */
         void Update()
         {
             CheckIfPaletteChanged();
@@ -130,16 +149,53 @@ namespace World.Map
             if (Input.GetMouseButtonDown(0))
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
                 RaycastHit Hit;
 
                 if (Physics.Raycast(ray, out Hit))
                 {
-                    TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
+                    if (editing == EditType.Path)
+                    {
+                        TileObject to = Hit.collider.gameObject.GetComponent<TileObject>();
 
-                    if (to == null) return;
+                        if (to == null) return;
 
-                    interactionMap.SetSelectedTile(to.tileLoc);
-                    PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
+                        interactionMap.SetSelectedTile(to.tileLoc);
+                        PlaceObjectOfTypeAt(pathObjectTypeToBuild, to.tileLoc);
+                    }
+                    else if (editing == EditType.Objects)
+                    {
+                        Object to = Hit.collider.gameObject.GetComponent<Object>();
+
+                        if (to == null)
+                        {
+                            return;
+                        }
+
+                        Selecteable s = Hit.collider.gameObject.GetComponent<Selecteable>();
+
+                        if (s != null)
+                        {
+                            
+                            // Remove other selected objects
+                            foreach (Object o in selectedObjects)
+                            {
+                                o.GetComponent<Selecteable>().SetSelected(false);
+                            }
+                            
+                            selectedObjects.Clear();
+
+                            // Set selected to true
+                            s.SetSelected(true);
+
+                            if (!selectedObjects.Contains(to))
+                            {
+                                selectedObjects.Add(to);
+                            }
+                        }
+
+                        Debug.Log("Successfully selected object.");
+                    }
                 }
             }
         }

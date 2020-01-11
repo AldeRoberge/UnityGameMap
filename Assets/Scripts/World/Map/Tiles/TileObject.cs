@@ -9,8 +9,6 @@ namespace World.Map.Tiles
  */
     public class TileObject : Object
     {
-
-
         public string GetObjectType()
         {
             return objectType;
@@ -26,7 +24,7 @@ namespace World.Map.Tiles
         {
             //TODO replace, this is the objectLibrary way of loading
             //tile.sprite = ObjectLibrary.getTileTexture(g.Type).texture;
-            
+
             Texture2D tex = Resources.Load<Texture2D>("Sprites/Ground/Tiles/" + objectType);
 
             if (tex == null)
@@ -37,7 +35,7 @@ namespace World.Map.Tiles
 
             SetTexture(tex);
         }
-        
+
         protected void SetTexture(Texture2D texture)
         {
             //TODO This material should be cached. (And cloned)
@@ -57,17 +55,14 @@ namespace World.Map.Tiles
             material.mainTexture = texture;
             gameObject.GetComponent<MeshRenderer>().material = material;
         }
-
     }
 
     public static class UITileObjectTypes
     {
-
         public const string CLEAR = "Clear";
         public const string DEFAULT = "Default";
         public const string GRASS = "Grass";
         public const string GRID = "Grid";
         public const string SELECTED = "Selected";
-
     }
 }
