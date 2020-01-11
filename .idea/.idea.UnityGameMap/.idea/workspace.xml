@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Visuals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameMap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameMap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Singleton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +79,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/FBXObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ObjectMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
@@ -98,9 +86,10 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Materials/Outline.shader" />
         <option value="$PROJECT_DIR$/Assets/UnityOutlineFX/UnityOutlineManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/SelectionBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
         <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
       </list>
     </option>
@@ -170,7 +159,7 @@
       <workItem from="1578180444343" duration="4659000" />
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
-      <workItem from="1578696819866" duration="14148000" />
+      <workItem from="1578696819866" duration="15135000" />
     </task>
     <servers />
   </component>

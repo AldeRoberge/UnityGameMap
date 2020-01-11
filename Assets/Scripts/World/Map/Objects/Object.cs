@@ -7,8 +7,6 @@ namespace World.Map.Objects
     {
         public string objectType;
 
-        public Orientation orientation;
-
         public TileLoc tileLoc;
 
         public void MoveTo(TileLoc tileLoc)
@@ -17,14 +15,10 @@ namespace World.Map.Objects
             this.transform.position = GameMap.Instance.GetWorldPos(tileLoc);
         }
 
-        public void SetRotation(Orientation rotation)
+        public void Rotate()
         {
-            orientation = rotation;
-            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, (int) rotation, 0));
-        }
-
-        public void SetTileLoc()
-        {
+            var rotation = transform.rotation;
+            transform.rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y + 90f, rotation.eulerAngles.z);
         }
     }
 

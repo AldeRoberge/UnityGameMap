@@ -4,14 +4,48 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Utils;
+using Object = World.Map.Objects.Object;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
+    private Sprite rotateButtonSprite;
+
+    private List<GameObject> buttons;
+
     // Start is called before the first frame update
     void Start()
     {
-        GameObject g = GenerateButton("Hey!", null, () => { Debug.Log("Pressed!"); });
-        g.transform.parent = gameObject.GetComponentInChildren<HorizontalLayoutGroup>().transform;
+        rotateButtonSprite = Resources.Load<Sprite>("/Sprites/UI/Rotate");
+        
+        buttons = new List<GameObject>();
+    }
+
+    public void ShowOptionsFor(Object obj)
+    {
+        ClearButtons();
+        AddButton(GenerateRotateObjectButton(obj));
+    }
+
+    public void AddButton(GameObject button)
+    {
+        buttons.Add(button);
+        button.transform.SetParent(gameObject.GetComponentInChildren<HorizontalLayoutGroup>().transform, false);
+    }
+
+    private void ClearButtons()
+    {
+        foreach (GameObject o in buttons)
+        {
+            Destroy(o);
+        }
+
+        buttons.Clear();
+    }
+
+    public GameObject GenerateRotateObjectButton(Object toRotate)
+    {
+        return GenerateButton("Rotate", rotateButtonSprite, toRotate.Rotate);
     }
 
     public GameObject GenerateButton(string text, Sprite sprite, UnityAction onClick)
@@ -31,7 +65,7 @@ public class UIManager : MonoBehaviour
         textMeshProUgui.text = text;
         textMeshProUgui.color = Color.black;
         textMeshProUgui.alignment = TextAlignmentOptions.Center;
-        t.transform.parent = b.transform;
+        t.transform.SetParent(b.transform, false);
 
         // Set aligned on center
         RectTransform rect = t.GetComponent<RectTransform>();

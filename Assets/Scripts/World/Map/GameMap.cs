@@ -192,6 +192,9 @@ namespace World.Map
                             {
                                 selectedObjects.Add(to);
                             }
+                            
+                            UIManager.Instance.ShowOptionsFor(to);
+
                         }
 
                         Debug.Log("Successfully selected object.");
