@@ -17,16 +17,9 @@ namespace Map
 
         public Texture2D arrow;
 
-        public static Texture2D gridTexture;
-        public static Texture2D selectedTexture;
-        public static Texture2D clearTexture;
-
         public new void Start()
         {
             base.Start();
-            gridTexture = Resources.Load<Texture2D>("Sprites/Ground/Tiles/Grid");
-            selectedTexture = Resources.Load<Texture2D>("Sprites/Ground/Tiles/Selected");
-            clearTexture = Resources.Load<Texture2D>("Sprites/Ground/Tiles/Clear");
         }
 
         /**
@@ -36,8 +29,8 @@ namespace Map
         {
             if (selectedTileObject != null)
             {
-                //Hide previously selected tile
-                selectedTileObject.SetTexture(clearTexture);
+                //Hide previously selected tile. Replaces with grid if grid is shown.
+                selectedTileObject.SetObjectType(isShowingGrid ? UITileObjectTypes.GRID : UITileObjectTypes.CLEAR);
             }
 
             TileObject to;
@@ -45,7 +38,7 @@ namespace Map
             // Create if it doesn't exist
             if (!Tiles.ContainsKey(tileLoc))
             {
-                to = CreateTileObject(tileLoc, 1);
+                to = CreateTileObject(tileLoc, UITileObjectTypes.SELECTED);
             }
             else
             {
@@ -53,7 +46,7 @@ namespace Map
             }
 
             selectedTileObject = to;
-            selectedTileObject.SetTexture(selectedTexture);
+            selectedTileObject.SetObjectType(UITileObjectTypes.SELECTED);
         }
 
         private bool isShowingGrid;
@@ -78,31 +71,29 @@ namespace Map
                  */
                 if (!Tiles.ContainsKey(to.tileLoc))
                 {
-                    interactionTileMapTile = CreateTileObject(to.tileLoc, 2);
+                    interactionTileMapTile = CreateTileObject(to.tileLoc, UITileObjectTypes.GRID);
                 }
                 else
                 {
                     interactionTileMapTile = Tiles[to.tileLoc];
                 }
 
-
                 if (interactionTileMapTile == selectedTileObject)
                 {
                     // Skip selected tile
                     continue;
                 }
-                
 
                 /**
                  * Set the texture to grid if enabled, nothing is disabled.
                  */
                 if (isShowingGrid)
                 {
-                    interactionTileMapTile.SetTexture(gridTexture);
+                    interactionTileMapTile.SetObjectType(UITileObjectTypes.GRID);
                 }
                 else
                 {
-                    interactionTileMapTile.SetTexture(clearTexture);
+                    interactionTileMapTile.SetObjectType(UITileObjectTypes.CLEAR);
                 }
             }
         }

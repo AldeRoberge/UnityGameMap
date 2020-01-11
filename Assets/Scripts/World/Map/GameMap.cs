@@ -78,7 +78,7 @@ namespace Map
 
     public class GameMapInput : MonoBehaviour
     {
-        public int pathObjectTypeToBuild = 0;
+        public string pathObjectTypeToBuild = "Path";
 
         public InteractionTileMap interactionMap;
 
@@ -119,7 +119,7 @@ namespace Map
             }
         }
 
-        private void PlaceObjectOfTypeAt(int objectType, TileLoc loc)
+        private void PlaceObjectOfTypeAt(string id, TileLoc loc)
         {
             ConnectedTileObject cto = connectedTileMap.GetConnectedTileAt(loc);
 
@@ -127,10 +127,10 @@ namespace Map
 
             if (cto != null)
             {
-                Debug.Log("Removing underlying tile of type " + objectType + " at " + loc + ".");
+                Debug.Log("Removing underlying tile of type " + id + " at " + loc + ".");
                 connectedTileMap.RemoveConnectedTileAt(cto.tileLoc);
 
-                if (cto.objectType == pathObjectTypeToBuild)
+                if (cto.GetObjectType() == pathObjectTypeToBuild)
                 {
                     // Do not place new path.
                     shouldPlace = false;
@@ -139,7 +139,7 @@ namespace Map
 
             if (shouldPlace)
             {
-                Debug.Log("Placing a new tile of type " + objectType + " at " + loc + ".");
+                Debug.Log("Placing a new tile of type " + id + " at " + loc + ".");
                 connectedTileMap.CreateConnectedTileObject(loc, pathObjectTypeToBuild);
             }
 
@@ -150,29 +150,6 @@ namespace Map
         private void CheckIfPaletteChanged()
         {
             bool updated = false;
-
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                pathObjectTypeToBuild++;
-
-                if (pathObjectTypeToBuild > 1)
-                {
-                    pathObjectTypeToBuild = 0;
-                }
-
-                updated = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                pathObjectTypeToBuild++;
-
-                if (pathObjectTypeToBuild < 0)
-                {
-                    pathObjectTypeToBuild = 1;
-                }
-
-                updated = true;
-            }
 
             if (updated)
             {

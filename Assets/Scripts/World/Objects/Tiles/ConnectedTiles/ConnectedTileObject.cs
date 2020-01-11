@@ -101,7 +101,7 @@ namespace Map.Objects.Tiles.ConnectedTiles
 
         public void UpdateConnection()
         {
-            if (objectType == -1)
+            if (objectType == UITileObjectTypes.CLEAR)
             {
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
                 return;
@@ -159,7 +159,7 @@ namespace Map.Objects.Tiles.ConnectedTiles
             }
 
             string actualResourcePath =
-                "Sprites/Ground/ConnectedTiles/" + ObjectTypeToId(objectType) + "/" + textureName;
+                "Sprites/Ground/ConnectedTiles/" + objectType + "/" + textureName;
 
             Texture2D texture = Resources.Load<Texture2D>(actualResourcePath);
 
@@ -174,18 +174,5 @@ namespace Map.Objects.Tiles.ConnectedTiles
             gameObject.transform.Rotate(new Vector3(0, rotation, 0));
         }
 
-        
-        private string ObjectTypeToId(int objectType)
-        {
-            switch (objectType)
-            {
-                case 0:
-                    return "Default";
-                case 1:
-                    return "Path";
-                default:
-                    return "";
-            }
-        }
     }
 }

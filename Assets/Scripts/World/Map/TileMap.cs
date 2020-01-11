@@ -17,31 +17,28 @@ namespace Map
         {
             Debug.Log("Hey");
             Tiles = new Dictionary<TileLoc, TileObject>();
-            
+
             for (int x = 0; x < GameMap.SquaredMapSize; x++)
             {
                 for (int y = 0; y < GameMap.SquaredMapSize; y++)
                 {
-                    CreateTileObject(new TileLoc(x, y), 0);
+                    CreateTileObject(new TileLoc(x, y), UITileObjectTypes.DEFAULT);
                 }
             }
-            
         }
 
-        public TileObject CreateTileObject(TileLoc loc, int type = -1)
+        public TileObject CreateTileObject(TileLoc loc, string type = UITileObjectTypes.DEFAULT)
         {
             GameObject tile = GameMap.Instance.CreateTileAt(loc, transform);
 
             TileObject c = tile.AddComponent<TileObject>();
-
-            
-            c.objectType = type;
+                
+            c.SetObjectType(type);
             c.tileLoc = loc;
             Tiles.Add(loc, c);
 
             return c;
         }
-
 
         public TileObject GetTileAt(TileLoc tileLoc)
         {
@@ -55,8 +52,5 @@ namespace Map
                 Tiles.Remove(tileLoc);
             }
         }
-
-        
-
     }
 }

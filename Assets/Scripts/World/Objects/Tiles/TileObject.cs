@@ -12,36 +12,36 @@ namespace Map.Objects.Tiles
     {
         public TileLoc tileLoc;
 
-        private int objectType { get; set; }
+        protected string objectType { get; set; }
 
-        public int GetObjectType()
+        public string GetObjectType()
         {
             return objectType;
         }
 
-        public void SetObjectType(int objectType)
+        public void SetObjectType(string objectType)
         {
             this.objectType = objectType;
+            UpdateTexture();
         }
-
 
         public void UpdateTexture()
         {
             //TODO replace, this is the objectLibrary way of loading
             //tile.sprite = ObjectLibrary.getTileTexture(g.Type).texture;
             
-            Texture2D tex = Resources.Load<Texture2D>("Sprites/Ground/Tiles/" + ObjectTypeToTexture(objectType));
+            Texture2D tex = Resources.Load<Texture2D>("Sprites/Ground/Tiles/" + objectType);
 
             if (tex == null)
             {
-                Debug.Log("Null tex with image " + ObjectTypeToTexture(objectType));
-                Debug.Log("Path : 'Sprites/Ground/Tiles/" + ObjectTypeToTexture(objectType) + "'.");
+                Debug.Log("Null tex with image " + objectType);
+                Debug.Log("Path : 'Sprites/Ground/Tiles/" + objectType + "'.");
             }
 
             SetTexture(tex);
         }
         
-        public void SetTexture(Texture2D texture)
+        protected void SetTexture(Texture2D texture)
         {
             //TODO This material should be cached. (And cloned)
             Material material = new Material(Resources.Load<Material>("Materials/GroundMaterial"));
@@ -60,36 +60,17 @@ namespace Map.Objects.Tiles
             material.mainTexture = texture;
             gameObject.GetComponent<MeshRenderer>().material = material;
         }
-        
-        
-        
-        private string ObjectTypeToTexture(int objectType)
-        {
-            switch (objectType)
-            {
-                case -1:
-                    return "Default";
-                case 0:
-                    return "Grass";
-                case 1:
-                    return "Clear";
-                case 2:
-                    return "Grid";
-                default:
-                    return "";
-            }
-        }
-        
+
     }
 
     public static class UITileObjectTypes
     {
 
-        public const int CLEAR = 0;
-        public const int DEFAULT = 1;
-        public const int GRASS = 2;
-        public const int GRID = 3;
-        public const int SELECTED = 4;
+        public const string CLEAR = "Clear";
+        public const string DEFAULT = "Default";
+        public const string GRASS = "Grass";
+        public const string GRID = "Grid";
+        public const string SELECTED = "Selected";
 
     }
 }

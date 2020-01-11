@@ -17,13 +17,13 @@ namespace Map
             ConnectedTiles = new Dictionary<TileLoc, ConnectedTileObject>();
         }
 
-        public ConnectedTileObject CreateConnectedTileObject(TileLoc loc, int objectType = -1)
+        public ConnectedTileObject CreateConnectedTileObject(TileLoc loc, string objectType = UITileObjectTypes.DEFAULT)
         {
             GameObject tile = GameMap.Instance.CreateTileAt(loc, transform);
 
             ConnectedTileObject cto = tile.AddComponent<ConnectedTileObject>();
             ConnectedTiles[loc] = cto;
-            cto.objectType = objectType;
+            cto.SetObjectType(objectType);
             cto.tileLoc = loc;
             cto.UpdateConnection();
 
