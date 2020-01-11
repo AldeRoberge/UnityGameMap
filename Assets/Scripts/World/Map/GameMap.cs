@@ -124,6 +124,9 @@ namespace World.Map
         Objects
     }
 
+    /**
+     * Allows to click on objects, move them and build paths.
+     */
     public class GameMapInput : MonoBehaviour
     {
         public string pathObjectTypeToBuild = "Path";
@@ -134,10 +137,20 @@ namespace World.Map
         public ConnectedGenericTileMap connectedGenericTileMap;
         public ObjectMap objectMap;
 
-        public EditType editing = EditType.Objects;
+        public EditType editing = EditType.Path;
 
         public List<ThreeDimensionObject> selectedObjects; //This is a list, for in the future for multiple object selection.
 
+        private ThreeDimensionObject moving;
+        private GameObject tileMouseClickOrigin;
+        private GameObject tileMousePosition;
+
+        public bool isMovingObject = false;
+
+        public bool ShowMouseInteraction = true;
+        private bool WasLastClickOnUI;
+
+        
         public void Start()
         {
             tileMap = GameMap.Instance.tileMap;
@@ -149,13 +162,6 @@ namespace World.Map
             selectedObjects = new List<ThreeDimensionObject>();
         }
 
-        private ThreeDimensionObject moving;
-        private GameObject tileMouseClickOrigin;
-        private GameObject tileMousePosition;
-
-        public bool isMovingObject = false;
-
-        public bool ShowMouseInteraction = false;
 
         /**
          * Registers events done to objects and tiles.
@@ -176,6 +182,17 @@ namespace World.Map
                 {
                     // Actually send updated position of 'moving' to server.
                     objectMap.MoveObjectTo(moving, GameMap.Instance.GetTileLocFromWorldPos(moving.transform.position));
+
+                    foreach (ThreeDimensionObject o in selectedObjects)
+                    {
+                        o.GetComponent<Selecteable>().Enable();
+                    }
+                }
+
+                if (WasLastClickOnUI)
+                {
+                    WasLastClickOnUI = false;
+                    return;
                 }
 
                 if (!isMovingObject)
@@ -243,18 +260,23 @@ namespace World.Map
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
                     Debug.Log("Is over game object, skipping.");
+                    WasLastClickOnUI = true;
                 }
                 else
                 {
+                    Debug.Log("Showing tileMouse.");
+                    
                     tileMouseClickOrigin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                     tileMouseClickOrigin.GetComponent<Renderer>().material.color = Color.red;
                     tileMouseClickOrigin.GetComponent<Renderer>().enabled = ShowMouseInteraction;
                     tileMouseClickOrigin.transform.position = new Vector3(0f, 0f, 0f);
+                    tileMouseClickOrigin.transform.SetParent(this.gameObject.transform);
 
                     tileMousePosition = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                     tileMousePosition.GetComponent<Renderer>().material.color = Color.blue;
                     tileMousePosition.GetComponent<Renderer>().enabled = ShowMouseInteraction;
                     tileMousePosition.transform.position = new Vector3(0f, 0f, 0f);
+                    tileMousePosition.transform.SetParent(this.gameObject.transform);
 
                     // Init origin pos
                     var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -263,7 +285,6 @@ namespace World.Map
                     {
                         tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
                         moving = Hit.collider.gameObject.GetComponent<ThreeDimensionObject>();
-                        SelectObject(moving);
 
                         if (!(moving is ThreeDimensionObject))
                         {
@@ -277,6 +298,7 @@ namespace World.Map
                         {
                             Debug.Log("Moving object.");
 
+                            SelectObject(moving);
                             Controls.Controls.Instance.Disable();
                         }
                     }
@@ -306,14 +328,11 @@ namespace World.Map
                             // Check if position is null, or if it is already the position it is at. (It only updates on mouse click release)
                             if (t == null || t == moving)
                             {
-                                Debug.Log("Moving, has not object at this position.");
                                 moving.transform.position = tileMousePosition.transform.position;
                             }
                             else
                             {
-                                Debug.Log("Object " +
-                                          objectMap.GetTileObjectAt(GameMap.Instance.GetTileLocFromWorldPos(tileMousePosition.transform.position)) +
-                                          " already at this position.");
+                                Debug.Log("Not moving, already has object at position.");
                             }
                         }
                     }
@@ -347,6 +366,11 @@ namespace World.Map
 
                 // Set selected to true
                 s.SetSelected(true);
+
+                foreach (ThreeDimensionObject obj in objectMap.Tiles.Values)
+                {
+                    obj.GetComponent<Selecteable>().Disable();
+                }
 
                 if (!selectedObjects.Contains(to))
                 {

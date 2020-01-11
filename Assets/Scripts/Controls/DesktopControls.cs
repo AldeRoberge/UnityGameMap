@@ -3,7 +3,7 @@ using Utils;
 
 namespace Controls
 {
-    public class DesktopControls : MonoBehaviour
+    public class DesktopControls : EnableableMonoBehaviour
     {
         private static readonly float PanSpeed = 20f;
         private static readonly float ZoomSpeedTouch = 0.1f;
@@ -21,22 +21,13 @@ namespace Controls
         private bool wasZoomingLastFrame; // Touch mode only
         private Vector2[] lastZoomPositions; // Touch mode only
 
-        public  bool IsEnabled;
-
+       
         void Awake()
         {
             cam = Controls.Instance.GetCamera();
         }
 
-        protected internal void Disable()
-        {
-            IsEnabled = false;
-        }
-
-        protected internal void Enable()
-        {
-            IsEnabled = true;
-        }
+        
 
         void Update()
         {

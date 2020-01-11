@@ -49,6 +49,7 @@
             </e>
           </e>
           <e p="Utils" t="Include">
+            <e p="EnableableMonoBehaviour.cs" t="Include" />
             <e p="RectTransformExtensions.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
           </e>

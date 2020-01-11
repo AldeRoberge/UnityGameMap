@@ -29,8 +29,12 @@ namespace World.Map.Tiles
 
             if (tex == null)
             {
-                Debug.Log("Null tex with image " + objectType);
-                Debug.Log("Path : 'Sprites/Ground/Tiles/" + objectType + "'.");
+                
+                //This is normal for ConnectedTilePaths, as they don't use the normal way of loading sprites.
+                
+                Debug.LogError("Null tex with image " + objectType);
+                Debug.LogError("Path : 'Sprites/Ground/Tiles/" + objectType + "'.");
+                return;
             }
 
             SetTexture(tex);

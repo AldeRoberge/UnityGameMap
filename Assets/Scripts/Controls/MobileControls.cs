@@ -4,26 +4,15 @@ The script only runs on mobile devices or the remote app.
 */
 
 using UnityEngine;
+using Utils;
 
 namespace Controls
 {
-    class MobileControls : MonoBehaviour
+    class MobileControls : EnableableMonoBehaviour
     {
         public Camera Camera;
         private bool Rotate = true;
         protected Plane Plane;
-
-        public bool IsEnabled;
-
-        protected internal void Disable()
-        {
-            IsEnabled = false;
-        }
-
-        protected internal void Enable()
-        {
-            IsEnabled = true;
-        }
 
         private void Awake()
         {

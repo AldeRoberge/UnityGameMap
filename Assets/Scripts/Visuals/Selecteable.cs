@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Utils;
 
 namespace Visuals
 {
     
-    public class Selecteable : MonoBehaviour
+    public class Selecteable : EnableableMonoBehaviour
     {
         public UnityEvent onMouseEnter = new UnityEvent();
         public UnityEvent onMouseExit = new UnityEvent();
@@ -32,6 +33,9 @@ namespace Visuals
 
         void OnMouseEnter()
         {
+            
+            
+            if (!IsEnabled) return;
             if (isSelected) return;
             renderer.material.color = hoverColor;
 
@@ -40,6 +44,7 @@ namespace Visuals
 
         void OnMouseExit()
         {
+            if (!IsEnabled) return;
             if (isSelected) return;
             renderer.material.color = startcolor;
 
