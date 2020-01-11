@@ -18,8 +18,8 @@ namespace World.Map.Tiles
 
         public TileLoc(TileLoc tileLoc)
         {
-            this.x = tileLoc.x;
-            this.y = tileLoc.y;
+            x = tileLoc.x;
+            y = tileLoc.y;
         }
 
         public TileLoc RelativeTo(TileLoc tileLoc)

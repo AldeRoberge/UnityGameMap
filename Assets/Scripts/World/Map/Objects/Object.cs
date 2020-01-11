@@ -12,7 +12,7 @@ namespace World.Map.Objects
         public void MoveTo(TileLoc tileLoc)
         {
             this.tileLoc = tileLoc;
-            this.transform.position = GameMap.Instance.GetWorldPos(tileLoc);
+            transform.position = GameMap.Instance.GetWorldPos(tileLoc);
         }
 
         public void Rotate()

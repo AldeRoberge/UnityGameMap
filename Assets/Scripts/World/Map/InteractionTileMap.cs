@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UIElements;
 using World.Map.Tiles;
 
@@ -16,7 +17,17 @@ namespace World.Map
 
         public new void Start()
         {
-            base.Start();
+
+                Tiles = new Dictionary<TileLoc, TileObject>();
+
+                for (int x = 0; x < GameMap.SquaredMapSize; x++)
+                {
+                    for (int y = 0; y < GameMap.SquaredMapSize; y++)
+                    {
+                        CreateTileObject(new TileLoc(x, y), UITileObjectTypes.CLEAR);
+                    }
+                }
+            
         }
 
         /**

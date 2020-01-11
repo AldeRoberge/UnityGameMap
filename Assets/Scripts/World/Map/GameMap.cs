@@ -69,6 +69,16 @@ namespace World.Map
             tileMap = new GameObject("TileObjects").AddComponent<TileMap>();
             tileMap.transform.parent = transform;
             tileMap.transform.position = new Vector3(0f, 0f, 0f);
+
+            tileMap.Tiles = new Dictionary<TileLoc, TileObject>();
+
+            for (int x = 0; x < SquaredMapSize; x++)
+            {
+                for (int y = 0; y < SquaredMapSize; y++)
+                {
+                    tileMap.CreateTileObject(new TileLoc(x, y), UITileObjectTypes.GRASS);
+                }
+            }
         }
 
         private void GenerateFakeObjectAtRandomPost()
@@ -130,7 +140,7 @@ namespace World.Map
         {
             tileMap = GameMap.Instance.tileMap;
             connectedTileMap = GameMap.Instance.connectedTileMap;
-            interactionMap = this.gameObject.AddComponent<InteractionTileMap>();
+            interactionMap = gameObject.AddComponent<InteractionTileMap>();
 
             selectedObjects = new List<Object>();
         }
@@ -173,6 +183,7 @@ namespace World.Map
                             if (to == null)
                             {
                                 interactionMap.UnselectTile();
+                                ScrollAndPinch.Instance.Enable();
                             }
                             else
                             {
@@ -187,6 +198,7 @@ namespace World.Map
                             if (to == null)
                             {
                                 UnselectObjects();
+                                ScrollAndPinch.Instance.Enable();
                             }
                             else
                             {
@@ -195,6 +207,7 @@ namespace World.Map
                         }
                     }
                 }
+
 
                 ResetObjectMovement();
             }
@@ -219,6 +232,17 @@ namespace World.Map
                 {
                     tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
                     moving = Hit.collider.gameObject.GetComponent<Object>();
+
+                    if (moving is TileObject)
+                    {
+                        ResetObjectMovement();
+                        UnselectObjects();
+                        ScrollAndPinch.Instance.Enable();
+                    }
+                    else
+                    {
+                        ScrollAndPinch.Instance.Disable();
+                    }
                 }
             }
 
@@ -259,6 +283,8 @@ namespace World.Map
 
             isMovingObject = false;
             moving = null;
+            
+            
         }
 
         private void SelectObject(Object to)
@@ -281,8 +307,6 @@ namespace World.Map
 
                 UIManager.Instance.ShowOptionsFor(to);
             }
-
-            Debug.Log("Successfully selected object.");
         }
 
         private void UnselectObjects()

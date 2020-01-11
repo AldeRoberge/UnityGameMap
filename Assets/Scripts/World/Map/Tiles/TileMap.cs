@@ -10,18 +10,7 @@ namespace World.Map.Tiles
     {
         public Dictionary<TileLoc, TileObject> Tiles;
 
-        public void Start()
-        {
-            Tiles = new Dictionary<TileLoc, TileObject>();
-
-            for (int x = 0; x < GameMap.SquaredMapSize; x++)
-            {
-                for (int y = 0; y < GameMap.SquaredMapSize; y++)
-                {
-                    CreateTileObject(new TileLoc(x, y), UITileObjectTypes.GRASS);
-                }
-            }
-        }
+        
 
         public TileObject CreateTileObject(TileLoc loc, string type = UITileObjectTypes.DEFAULT)
         {
