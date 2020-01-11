@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d484e81-fc52-4a07-bd05-67efb2db9eab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controls.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/Controls.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/Controls.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ThreeDimensionObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ThreeDimensionObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/GenericTileMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/GenericTileMap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityGameMap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/DesktopControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/DesktopControls.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameMap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/Packet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/WorldPosData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/WorldPosData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Donut.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Donut.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_2.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_3.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_3.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_4.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_4.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_5.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Pots_type_5.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/3D/Tree_type_6.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/3D/Tree_type_6.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScrollAndPinch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScrollAndPinch.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +38,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/47B3FEC5-F420-47E6-A737-8D0F615D9F0C/21/f65b5e58/SelectionType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/Packet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileLoc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/77/50eed0fa/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -47,7 +53,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Visuals/Selecteable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.2.11f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/GenericTileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Migration/Packets/MoveObjectPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controls/Controls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,6 +63,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/66/3ccfd410/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ThreeDimensionObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/8f/e51c37c5/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Orientation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,10 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/TileMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameMapInteraction.cs" />
-        <option value="$PROJECT_DIR$/Assets/GameMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMapInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/ConnectedTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/GameMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Objects/Tiles/ConnectedTiles/ConnectedTileObjectUtils.cs" />
@@ -97,14 +100,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/RotateObjectPacket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/Packet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/WorldPosData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
         <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Migration/Packets/DontTransfer/GameServerConnectionConcrete.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PanZoom.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PerspectivePan.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
         <option value="$PROJECT_DIR$/Assets/MobileScrollAndPinch.cs" />
         <option value="$PROJECT_DIR$/Assets/HandleCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraHandler.cs" />
@@ -115,7 +114,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/Controls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/DesktopControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controls/MobileControls.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/3DObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ThreeDimensionObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/Object.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Objects/ObjectMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/ConnectedTiles/ConnectedTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/GenericTileMap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/InteractionTileMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Map/Tiles/TileMap.cs" />
       </list>
     </option>
   </component>
@@ -135,6 +142,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -185,7 +193,7 @@
       <workItem from="1578198778480" duration="6426000" />
       <workItem from="1578281793698" duration="99000" />
       <workItem from="1578696819866" duration="24247000" />
-      <workItem from="1578769634099" duration="3521000" />
+      <workItem from="1578769634099" duration="7640000" />
     </task>
     <servers />
   </component>
@@ -268,6 +276,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs</url>
+          <line>38</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/World/Map/GameMap.cs" initialLine="39">
+            <startOffsets>
+              <option value="935" />
+            </startOffsets>
+            <endOffsets>
+              <option value="949" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

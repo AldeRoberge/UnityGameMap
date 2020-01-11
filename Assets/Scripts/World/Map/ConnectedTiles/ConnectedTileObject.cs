@@ -27,7 +27,7 @@ namespace World.Map.ConnectedTiles
 
         public bool IsOfSameType(TileLoc otherTile)
         {
-            ConnectedTileObject cto = GameMap.Instance.connectedTileMap.GetConnectedTileAt(otherTile);
+            ConnectedTileObject cto = GameMap.Instance.connectedGenericTileMap.GetConnectedTileAt(otherTile);
 
             if (cto == null)
             {

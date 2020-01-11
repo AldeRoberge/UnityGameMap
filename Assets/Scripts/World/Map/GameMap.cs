@@ -15,7 +15,7 @@ using TileLoc = World.Map.Tiles.TileLoc;
 namespace World.Map
 {
     /**
-     * GameMap is a parent of the following types :
+     * GameMap is the parent of the following types :
      
      *     TileMap : Tiles (ground)
      *     ConnectedTileMap : Connected Tiles (paths)
@@ -26,11 +26,10 @@ namespace World.Map
         public GameMapInput input;
 
         public TileMap tileMap;
-        public ConnectedTileMap connectedTileMap;
+        public ConnectedGenericTileMap connectedGenericTileMap;
 
         public ObjectMap objectMap;
 
-        public const int SquaredMapSize = 10;
 
         public void Start()
         {
@@ -40,8 +39,6 @@ namespace World.Map
             InitTileMap();
 
             InitObjectMap();
-
-            GenerateFakeObjectAtRandomPost();
         }
 
         private void InitObjectMap()
@@ -60,9 +57,9 @@ namespace World.Map
 
         private void InitConnectedTileMap()
         {
-            connectedTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedTileMap>();
-            connectedTileMap.transform.parent = transform;
-            connectedTileMap.transform.position = new Vector3(0f, 0.05f, 0f);
+            connectedGenericTileMap = new GameObject("ConnectedTileObjects").AddComponent<ConnectedGenericTileMap>();
+            connectedGenericTileMap.transform.parent = transform;
+            connectedGenericTileMap.transform.position = new Vector3(0f, 0.05f, 0f);
         }
 
         private void InitTileMap()
@@ -71,22 +68,40 @@ namespace World.Map
             tileMap.transform.parent = transform;
             tileMap.transform.position = new Vector3(0f, 0f, 0f);
 
-            tileMap.Tiles = new Dictionary<TileLoc, TileObject>();
-
-            for (int x = 0; x < SquaredMapSize; x++)
-            {
-                for (int y = 0; y < SquaredMapSize; y++)
-                {
-                    tileMap.CreateTileObject(new TileLoc(x, y), UITileObjectTypes.GRASS);
-                }
-            }
+            
         }
 
-        private void GenerateFakeObjectAtRandomPost()
+        // Converts a TileLoc to a Vector3
+        public Vector3 GetWorldPosFromTileLoc(TileLoc tileLoc)
         {
-            TileLoc loc = new TileLoc(Random.Range(0, SquaredMapSize), Random.Range(0, SquaredMapSize));
+            TileObject tileAt = tileMap.GetTileObjectAt(tileLoc);
 
-            //GameObject donut = Resources.I TODO
+            if (tileAt != null)
+            {
+                return tileAt.transform.position;
+            }
+
+            Debug.Log("tileMapTiles : " + tileMap.Tiles.Count);
+
+            Debug.LogError("Fatal error : Could not find tile at '" + tileLoc + "'.");
+
+            return new Vector3();
+        }
+
+        // Converts a Vector3 to a TileLoc
+        public TileLoc GetTileLocFromWorldPos(Vector3 worldPos)
+        {
+            foreach (TileObject to in tileMap.Tiles.Values)
+            {
+                if (to.transform.position == worldPos)
+                {
+                    return to.tileLoc;
+                }
+            }
+
+            Debug.Log("Could not find TilePos for WorldPos " + worldPos + ".");
+
+            return new TileLoc(0, 0);
         }
 
         /**
@@ -101,20 +116,6 @@ namespace World.Map
             tile.transform.localPosition = new Vector3(loc.x, 0, loc.y);
 
             return tile;
-        }
-
-        public Vector3 GetWorldPos(TileLoc tileLoc)
-        {
-            TileObject tileAt = tileMap.GetTileAt(tileLoc);
-
-            if (tileMap.GetTileAt(tileLoc) != null)
-            {
-                return tileAt.transform.position;
-            }
-
-            Debug.LogError("Fatal error : Could not find tile at '" + tileLoc + "'.");
-
-            return new Vector3();
         }
     }
 
@@ -131,17 +132,20 @@ namespace World.Map
         public InteractionTileMap interactionMap;
 
         public TileMap tileMap;
-        public ConnectedTileMap connectedTileMap;
+        public ConnectedGenericTileMap connectedGenericTileMap;
+        public ObjectMap objectMap;
 
         public EditType editing = EditType.Objects;
 
-        public List<Object> selectedObjects;
+        public List<Object> selectedObjects; //This is a list, for in the future for multiple object selection.
 
         public void Start()
         {
             tileMap = GameMap.Instance.tileMap;
-            connectedTileMap = GameMap.Instance.connectedTileMap;
+            connectedGenericTileMap = GameMap.Instance.connectedGenericTileMap;
             interactionMap = gameObject.AddComponent<InteractionTileMap>();
+
+            objectMap = GameMap.Instance.objectMap;
 
             selectedObjects = new List<Object>();
         }
@@ -227,36 +231,47 @@ namespace World.Map
             }
 
             // Mouse is pressed, create the mouse position helpers.
-            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            if (Input.GetMouseButtonDown(0))
             {
-                tileMouseClickOrigin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                tileMouseClickOrigin.GetComponent<Renderer>().material.color = Color.red;
-                tileMouseClickOrigin.GetComponent<Renderer>().enabled = ShowMouseInteraction;
-                tileMouseClickOrigin.transform.position = new Vector3(0f, 0f, 0f);
-
-                tileMousePosition = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                tileMousePosition.GetComponent<Renderer>().material.color = Color.blue;
-                tileMousePosition.GetComponent<Renderer>().enabled = ShowMouseInteraction;
-                tileMousePosition.transform.position = new Vector3(0f, 0f, 0f);
-
-                // Init origin pos
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out var Hit))
+                if (EventSystem.current.IsPointerOverGameObject())
                 {
-                    tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
-                    moving = Hit.collider.gameObject.GetComponent<Object>();
-                    SelectObject(moving);
+                    Debug.Log("Is over game object, skipping.");
+                }
+                else
+                {
+                    tileMouseClickOrigin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    tileMouseClickOrigin.GetComponent<Renderer>().material.color = Color.red;
+                    tileMouseClickOrigin.GetComponent<Renderer>().enabled = ShowMouseInteraction;
+                    tileMouseClickOrigin.transform.position = new Vector3(0f, 0f, 0f);
 
-                    if (moving is TileObject)
+                    tileMousePosition = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    tileMousePosition.GetComponent<Renderer>().material.color = Color.blue;
+                    tileMousePosition.GetComponent<Renderer>().enabled = ShowMouseInteraction;
+                    tileMousePosition.transform.position = new Vector3(0f, 0f, 0f);
+
+                    // Init origin pos
+                    var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(ray, out var Hit))
                     {
-                        ResetObjectMovement();
-                        UnselectObjects();
-                        Controls.Controls.Instance.Enable();
-                    }
-                    else
-                    {
-                        Controls.Controls.Instance.Disable();
+                        tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
+                        moving = Hit.collider.gameObject.GetComponent<Object>();
+                        SelectObject(moving);
+
+                        if (moving is TileObject)
+                        {
+                            Debug.Log("Moving tile object, not moving.");
+
+                            ResetObjectMovement();
+                            UnselectObjects();
+                            Controls.Controls.Instance.Enable();
+                        }
+                        else
+                        {
+                            Debug.Log("Moving object.");
+
+                            Controls.Controls.Instance.Disable();
+                        }
                     }
                 }
             }
@@ -279,7 +294,14 @@ namespace World.Map
 
                         if (isMovingObject && moving != null)
                         {
-                            moving.transform.position = tileMousePosition.transform.position;
+                            if (!objectMap.HasTileObjectAt(tileMousePosition.transform.position))
+                            {
+                                moving.transform.position = tileMousePosition.transform.position;
+                            }
+                            else
+                            {
+                                Debug.Log("Object already at this position.");
+                            }
                         }
                     }
                 }
@@ -335,14 +357,14 @@ namespace World.Map
 
         private void PlaceObjectOfTypeAt(string id, TileLoc loc)
         {
-            ConnectedTileObject cto = connectedTileMap.GetConnectedTileAt(loc);
+            ConnectedTileObject cto = connectedGenericTileMap.GetConnectedTileAt(loc);
 
             bool shouldPlace = true;
 
             if (cto != null)
             {
                 Debug.Log("Removing underlying tile of type " + id + " at " + loc + ".");
-                connectedTileMap.RemoveConnectedTileAt(cto.tileLoc);
+                connectedGenericTileMap.RemoveConnectedTileAt(cto.tileLoc);
 
                 if (cto.GetObjectType() == pathObjectTypeToBuild)
                 {
@@ -354,7 +376,7 @@ namespace World.Map
             if (shouldPlace)
             {
                 Debug.Log("Placing a new tile of type " + id + " at " + loc + ".");
-                connectedTileMap.CreateConnectedTileObject(loc, pathObjectTypeToBuild);
+                connectedGenericTileMap.CreateConnectedTileObject(loc, pathObjectTypeToBuild);
             }
 
             // Update the surrounding tiles
@@ -367,7 +389,7 @@ namespace World.Map
             foreach (TileLoc pos in ConnectedTileUtils.Cardinal)
             {
                 ConnectedTileObject c =
-                    GameMap.Instance.connectedTileMap.GetConnectedTileAt(pos.RelativeTo(tileLoc));
+                    GameMap.Instance.connectedGenericTileMap.GetConnectedTileAt(pos.RelativeTo(tileLoc));
 
                 if (c != null)
                 {

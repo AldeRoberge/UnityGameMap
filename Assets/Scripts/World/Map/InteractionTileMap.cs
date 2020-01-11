@@ -17,22 +17,17 @@ namespace World.Map
 
         public bool debugInteraction = true;
 
-
-
-        
         public new void Start()
         {
-
-                Tiles = new Dictionary<TileLoc, TileObject>();
-
-                for (int x = 0; x < GameMap.SquaredMapSize; x++)
-                {
-                    for (int y = 0; y < GameMap.SquaredMapSize; y++)
-                    {
-                        CreateTileObject(new TileLoc(x, y), UITileObjectTypes.CLEAR);
-                    }
-                }
+            base.Start();
             
+            for (int x = 0; x < SquaredMapSize; x++)
+            {
+                for (int y = 0; y < SquaredMapSize; y++)
+                {
+                    CreateTileObject(new TileLoc(x, y), UITileObjectTypes.CLEAR);
+                }
+            }
         }
 
         /**
@@ -40,9 +35,8 @@ namespace World.Map
          */
         public void SetSelectedTile(TileLoc tileLoc)
         {
-            
             Debug.Log("Set selected tile '" + tileLoc + "'.");
-            
+
             UnselectTile();
 
             TileObject to;
@@ -63,9 +57,8 @@ namespace World.Map
 
         public void UnselectTile()
         {
-            
             Debug.Log("Unselecting tile.");
-            
+
             if (selectedTileObject != null)
             {
                 //Hide previously selected tile. Replaces with grid if grid is shown.
@@ -77,9 +70,6 @@ namespace World.Map
 
         public void ToggleGrid()
         {
-            
-            
-            
             if (!isShowingGrid)
             {
                 isShowingGrid = true;
@@ -88,7 +78,7 @@ namespace World.Map
             {
                 isShowingGrid = false;
             }
-            
+
             Debug.Log("Is showing grid : " + isShowingGrid);
 
             foreach (TileObject to in GameMap.Instance.tileMap.Tiles.Values)

@@ -6,8 +6,31 @@
     <e p="C:\Users\rotmg\.Rider2019.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\rotmg\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_UnityGameMap.-1794021518.00" t="ExcludeRecursive" />
     <e p="C:\Users\rotmg\Desktop\UnityGameMap" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="IngameDebugConsole" t="Include">
+            <e p="Editor" t="Include">
+              <e p="DebugLogManagerEditor.cs" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="CircularBuffer.cs" t="Include" />
+              <e p="ConsoleMethodAttribute.cs" t="Include" />
+              <e p="DebugLogConsole.cs" t="Include" />
+              <e p="DebugLogEntry.cs" t="Include" />
+              <e p="DebugLogIndexList.cs" t="Include" />
+              <e p="DebugLogItem.cs" t="Include" />
+              <e p="DebugLogLogcatListener.cs" t="Include" />
+              <e p="DebugLogManager.cs" t="Include" />
+              <e p="DebugLogPopup.cs" t="Include" />
+              <e p="DebugLogRecycledListView.cs" t="Include" />
+              <e p="DebugsOnScrollListener.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Controls" t="Include">
             <e p="Controls.cs" t="Include" />
@@ -43,8 +66,10 @@
               <e p="Objects" t="Include">
                 <e p="Object.cs" t="Include" />
                 <e p="ObjectMap.cs" t="Include" />
+                <e p="ThreeDimensionObject.cs" t="Include" />
               </e>
               <e p="Tiles" t="Include">
+                <e p="GenericTileMap.cs" t="Include" />
                 <e p="TileLoc.cs" t="Include" />
                 <e p="TileMap.cs" t="Include" />
                 <e p="TileObject.cs" t="Include" />

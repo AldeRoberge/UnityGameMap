@@ -7,15 +7,8 @@ namespace World.Map.ConnectedTiles
     /**
      * A map of connected tiles (paths).
      */
-    public class ConnectedTileMap : MonoBehaviour
+    public class ConnectedGenericTileMap : GenericTileMap<ConnectedTileObject>
     {
-        public Dictionary<TileLoc, ConnectedTileObject> ConnectedTiles;
-
-        public void Start()
-        {
-            ConnectedTiles = new Dictionary<TileLoc, ConnectedTileObject>();
-        }
-
         /**
          * Creates a ConnectedTileObject at position loc.
          */
@@ -24,7 +17,7 @@ namespace World.Map.ConnectedTiles
             GameObject tile = GameMap.Instance.CreateTileAt(loc, transform);
 
             ConnectedTileObject cto = tile.AddComponent<ConnectedTileObject>();
-            ConnectedTiles[loc] = cto;
+            Tiles[loc] = cto;
             cto.SetObjectType(objectType);
             cto.tileLoc = loc;
             cto.UpdateConnection();
@@ -37,7 +30,7 @@ namespace World.Map.ConnectedTiles
          */
         public ConnectedTileObject GetConnectedTileAt(TileLoc tileLoc)
         {
-            return !ConnectedTiles.ContainsKey(tileLoc) ? null : ConnectedTiles[tileLoc];
+            return !Tiles.ContainsKey(tileLoc) ? null : Tiles[tileLoc];
         }
 
         /**
@@ -45,10 +38,10 @@ namespace World.Map.ConnectedTiles
          */
         public void RemoveConnectedTileAt(TileLoc tileLoc)
         {
-            if (ConnectedTiles.ContainsKey(tileLoc))
+            if (Tiles.ContainsKey(tileLoc))
             {
-                Destroy(ConnectedTiles[tileLoc].gameObject);
-                ConnectedTiles.Remove(tileLoc);
+                Destroy(Tiles[tileLoc].gameObject);
+                Tiles.Remove(tileLoc);
             }
             else
             {
