@@ -61,8 +61,6 @@ namespace Visuals
                 renderer.material.color = startcolor;
                 onDeselection.Invoke();
             }
-
-            Debug.Log(isSelected);
         }
     }
 }

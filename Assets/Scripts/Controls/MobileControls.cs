@@ -13,7 +13,7 @@ namespace Controls
         private bool Rotate = true;
         protected Plane Plane;
 
-        private bool IsEnabled;
+        public bool IsEnabled;
 
         protected internal void Disable()
         {

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Tilemaps;
+using UnityEngine.WSA;
 using Utils;
 using Visuals;
 using World.Map.Tiles;
@@ -26,6 +28,21 @@ namespace World.Map.Objects
             Clone(pPrefab4, new TileLoc(3, 3));
         }
 
+        public void MoveObjectTo(ThreeDimensionObject obj, TileLoc newPos)
+        {
+            if (!Tiles.ContainsValue(obj))
+            {
+                Debug.Log("Fatal error : Could not move object '" + obj + "' because it is not found in the tilemap.");
+                return;
+            }
+
+            Tiles.Remove(obj.tileLoc);
+            Tiles.Add(newPos, obj);
+
+            obj.tileLoc = newPos;
+            obj.transform.position = GameMap.Instance.GetWorldPosFromTileLoc(newPos);
+        }
+
         private void Clone(UnityEngine.Object pPrefab, TileLoc tileLoc)
         {
             if (GetTileObjectAt(tileLoc))
@@ -39,17 +56,16 @@ namespace World.Map.Objects
             collider.convex = true;
 
             ThreeDimensionObject o = pNewObject.AddComponent<ThreeDimensionObject>();
-            o.MoveTo(tileLoc);
-
             Selecteable selecteable = pNewObject.AddComponent<Selecteable>();
             selecteable.onSelection.AddListener(() => { });
 
             Tiles.Add(tileLoc, o);
+            o.tileLoc = tileLoc;
+            MoveObjectTo(o, tileLoc);
         }
 
-        public bool HasTileObjectAt(Vector3 transformPosition)
-        {
-            return GetTileObjectAt(GameMap.Instance.GetTileLocFromWorldPos(transformPosition));
-        }
+        
+
+        
     }
 }

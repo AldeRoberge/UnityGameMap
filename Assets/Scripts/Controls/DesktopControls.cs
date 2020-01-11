@@ -21,7 +21,7 @@ namespace Controls
         private bool wasZoomingLastFrame; // Touch mode only
         private Vector2[] lastZoomPositions; // Touch mode only
 
-        private bool IsEnabled;
+        public  bool IsEnabled;
 
         void Awake()
         {

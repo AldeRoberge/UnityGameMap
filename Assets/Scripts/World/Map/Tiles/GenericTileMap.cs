@@ -18,17 +18,28 @@ namespace World.Map.Tiles
 
         public void Start()
         {
-            Debug.Log("Called");
             Tiles = new Dictionary<TileLoc, T>();
         }
 
         public T GetTileObjectAt(TileLoc tileLoc)
         {
+            if (tileLoc == null)
+            {
+                Debug.LogError("Fatal : TileLoc should not be null.");
+                return null;
+            }
+
             return !Tiles.ContainsKey(tileLoc) ? null : Tiles[tileLoc];
         }
 
         public void RemoveTileObjectAt(TileLoc tileLoc)
         {
+            if (tileLoc == null)
+            {
+                Debug.LogError("Fatal : TileLoc should not be null.");
+                return;
+            }
+
             if (Tiles.ContainsKey(tileLoc))
             {
                 Tiles.Remove(tileLoc);

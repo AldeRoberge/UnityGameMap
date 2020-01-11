@@ -30,7 +30,6 @@ namespace World.Map
 
         public ObjectMap objectMap;
 
-
         public void Start()
         {
             InitGameMapInteraction();
@@ -67,8 +66,6 @@ namespace World.Map
             tileMap = new GameObject("TileObjects").AddComponent<TileMap>();
             tileMap.transform.parent = transform;
             tileMap.transform.position = new Vector3(0f, 0f, 0f);
-
-            
         }
 
         // Converts a TileLoc to a Vector3
@@ -78,7 +75,7 @@ namespace World.Map
 
             if (tileAt != null)
             {
-                return tileAt.transform.position;
+                return new Vector3(tileAt.transform.position.x, 0, tileAt.transform.position.z);
             }
 
             Debug.Log("tileMapTiles : " + tileMap.Tiles.Count);
@@ -91,6 +88,8 @@ namespace World.Map
         // Converts a Vector3 to a TileLoc
         public TileLoc GetTileLocFromWorldPos(Vector3 worldPos)
         {
+            worldPos = new Vector3(worldPos.x, 0, worldPos.z);
+
             foreach (TileObject to in tileMap.Tiles.Values)
             {
                 if (to.transform.position == worldPos)
@@ -137,7 +136,7 @@ namespace World.Map
 
         public EditType editing = EditType.Objects;
 
-        public List<Object> selectedObjects; //This is a list, for in the future for multiple object selection.
+        public List<ThreeDimensionObject> selectedObjects; //This is a list, for in the future for multiple object selection.
 
         public void Start()
         {
@@ -147,10 +146,10 @@ namespace World.Map
 
             objectMap = GameMap.Instance.objectMap;
 
-            selectedObjects = new List<Object>();
+            selectedObjects = new List<ThreeDimensionObject>();
         }
 
-        private Object moving;
+        private ThreeDimensionObject moving;
         private GameObject tileMouseClickOrigin;
         private GameObject tileMousePosition;
 
@@ -173,6 +172,12 @@ namespace World.Map
             // Mouse was released, mouse did not move more than one tile. Selecting object/tile.
             if (Input.GetMouseButtonUp(0))
             {
+                if (moving != null)
+                {
+                    // Actually send updated position of 'moving' to server.
+                    objectMap.MoveObjectTo(moving, GameMap.Instance.GetTileLocFromWorldPos(moving.transform.position));
+                }
+
                 if (!isMovingObject)
                 {
                     Debug.Log("Mouse released. Was not carrying an object.");
@@ -208,7 +213,7 @@ namespace World.Map
                         {
                             Debug.Log("Currently editing objects.");
 
-                            Object to = Hit.collider.gameObject.GetComponent<Object>();
+                            ThreeDimensionObject to = Hit.collider.gameObject.GetComponent<ThreeDimensionObject>();
 
                             if (to == null)
                             {
@@ -220,6 +225,8 @@ namespace World.Map
                             else
                             {
                                 Debug.Log("Selected new object.");
+
+                                Controls.Controls.Instance.Disable();
 
                                 SelectObject(to);
                             }
@@ -255,12 +262,12 @@ namespace World.Map
                     if (Physics.Raycast(ray, out var Hit))
                     {
                         tileMouseClickOrigin.transform.position = Hit.collider.gameObject.transform.position;
-                        moving = Hit.collider.gameObject.GetComponent<Object>();
+                        moving = Hit.collider.gameObject.GetComponent<ThreeDimensionObject>();
                         SelectObject(moving);
 
-                        if (moving is TileObject)
+                        if (!(moving is ThreeDimensionObject))
                         {
-                            Debug.Log("Moving tile object, not moving.");
+                            Debug.Log("Probably moving a ground tile, so not moving.");
 
                             ResetObjectMovement();
                             UnselectObjects();
@@ -294,13 +301,19 @@ namespace World.Map
 
                         if (isMovingObject && moving != null)
                         {
-                            if (!objectMap.HasTileObjectAt(tileMousePosition.transform.position))
+                            ThreeDimensionObject t = objectMap.GetTileObjectAt(GameMap.Instance.GetTileLocFromWorldPos(tileMousePosition.transform.position));
+
+                            // Check if position is null, or if it is already the position it is at. (It only updates on mouse click release)
+                            if (t == null || t == moving)
                             {
+                                Debug.Log("Moving, has not object at this position.");
                                 moving.transform.position = tileMousePosition.transform.position;
                             }
                             else
                             {
-                                Debug.Log("Object already at this position.");
+                                Debug.Log("Object " +
+                                          objectMap.GetTileObjectAt(GameMap.Instance.GetTileLocFromWorldPos(tileMousePosition.transform.position)) +
+                                          " already at this position.");
                             }
                         }
                     }
@@ -322,7 +335,7 @@ namespace World.Map
             moving = null;
         }
 
-        private void SelectObject(Object to)
+        private void SelectObject(ThreeDimensionObject to)
         {
             Selecteable s = to.gameObject.GetComponent<Selecteable>();
 

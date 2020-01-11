@@ -21,9 +21,12 @@ namespace World.Map.Tiles
 
         public TileObject CreateTileObject(TileLoc loc, string type = UITileObjectTypes.DEFAULT)
         {
-            Debug.Log(loc);
-            
-            
+            if (GetTileObjectAt(loc) != null)
+            {
+                Debug.Log("Fatal : Tile already at '" + loc + "'.");
+                return null;
+            }
+
             GameObject tile = GameMap.Instance.CreateTileAt(loc, transform);
 
             TileObject c = tile.AddComponent<TileObject>();

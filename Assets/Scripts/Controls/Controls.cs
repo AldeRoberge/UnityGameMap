@@ -10,16 +10,22 @@ namespace Controls
         private MobileControls _mobileControls;
         private DesktopControls _desktopControls;
 
+        public bool isEnabled = false;
+        
         public void Disable()
         {
             _mobileControls.Disable();
             _desktopControls.Disable();
+
+            isEnabled = false;
         }
 
         public void Enable()
         {
             _mobileControls.Enable();
             _desktopControls.Enable();
+
+            isEnabled = true;
         }
 
         public void Start()
