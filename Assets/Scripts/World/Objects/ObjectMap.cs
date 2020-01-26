@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Tilemaps;
-using UnityEngine.WSA;
-using Utils;
+﻿using UnityEngine;
 using Visuals;
-using World.Map.Tiles;
+using World.Tiles;
 
-namespace World.Map.Objects
+namespace World.Objects
 {
     public class ObjectMap : GenericTileMap<ThreeDimensionObject>
     {

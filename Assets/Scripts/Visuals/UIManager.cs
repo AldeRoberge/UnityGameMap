@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Migration.Packets;
-using Migration.Packets.DontTransfer;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Utils;
-using Object = World.Map.Objects.Object;
+using Object = World.Objects.Object;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -23,8 +21,7 @@ public class UIManager : Singleton<UIManager>
     {
         rotateButtonSprite = Resources.Load<Sprite>("Sprites/UI/Button/Rotate");
         informationButtonSprite = Resources.Load<Sprite>("Sprites/UI/Button/QuestionMark");
-        
-        
+
         buttonBackground = Resources.Load<Sprite>("Sprites/UI/Button/Button");
 
         buttons = new List<GameObject>();
@@ -57,15 +54,16 @@ public class UIManager : Singleton<UIManager>
     {
         return GenerateButton("Rotate", rotateButtonSprite, () =>
         {
-            toRotate.Rotate();
-            GameServerConnectionConcrete.Instance.SendPacket(new RotateObjectPacket()
+            toRotate.Rotate90();
+
+            /*GameServerConnectionConcrete.Instance.SendPacket(new RotateObjectPacket()
             {
                 objectUID = 2,
                 newRotation = toRotate.GetRotation()
-            });
+            });*/
         });
     }
-    
+
     public GameObject GenerateInformationButton(Object toRotate)
     {
         return GenerateButton("Information", informationButtonSprite, () =>
@@ -74,7 +72,6 @@ public class UIManager : Singleton<UIManager>
             Debug.Log("Object type : " + toRotate.objectType);
         });
     }
-    
 
     public GameObject GenerateButton(string text, Sprite sprite, UnityAction onClick)
     {

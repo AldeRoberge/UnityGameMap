@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using Controls;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utils;
 using Visuals;
-using World.Map.ConnectedTiles;
-using World.Map.Objects;
-using World.Map.Tiles;
-using Object = World.Map.Objects.Object;
-using Random = UnityEngine.Random;
-using TileLoc = World.Map.Tiles.TileLoc;
+using World.ConnectedTiles;
+using World.Map;
+using World.Objects;
+using World.Tiles;
+using Object = World.Objects.Object;
+using TileLoc = World.Tiles.TileLoc;
 
-namespace World.Map
+namespace World
 {
     /**
      * GameMap is the parent of the following types :
@@ -139,7 +137,7 @@ namespace World.Map
 
         public bool isMovingObject = false;
 
-        public bool ShowMouseInteraction = false;
+        public bool ShowMouseInteraction = true;
         private bool WasLastClickOnUI;
 
         public void Start()

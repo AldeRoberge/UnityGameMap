@@ -1,6 +1,6 @@
-﻿using World.Map.Tiles;
+﻿using World.Tiles;
 
-namespace World.Map.Objects
+namespace World.Objects
 {
     public class ThreeDimensionObject : TileObject
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // Container for a simple debug entry
-namespace IngameDebugConsole
+namespace Plugins.IngameDebugConsole.Scripts
 {
 	public class DebugLogEntry : System.IEquatable<DebugLogEntry>
 	{

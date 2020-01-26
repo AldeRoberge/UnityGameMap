@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using World.Map.Tiles;
+﻿using UnityEngine;
+using World.Tiles;
 
-namespace World.Map.ConnectedTiles
+namespace World.ConnectedTiles
 {
     /**
      * A map of connected tiles (paths).

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using World.Map.Tiles;
+using World.Tiles;
 
-namespace World.Map.ConnectedTiles
+namespace World.ConnectedTiles
 {
     public class ConnectedTileObject : TileObject
     {

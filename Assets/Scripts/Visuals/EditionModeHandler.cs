@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
-using World.Map;
+using World;
 
 public enum EditType
 {

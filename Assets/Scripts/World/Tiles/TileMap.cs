@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace World.Map.Tiles
+namespace World.Tiles
 {
     public class TileMap : GenericTileMap<TileObject>
     {

@@ -14,6 +14,8 @@ namespace Controls
         private static readonly float[] ZoomBounds = new float[] {10f, 85f};
 
         private Camera cam;
+        
+        
 
         private Vector3 lastPanPosition;
         private int panFingerId; // Touch mode only
@@ -25,9 +27,8 @@ namespace Controls
         void Awake()
         {
             cam = Controls.Instance.GetCamera();
-        }
 
-        
+        }
 
         void Update()
         {

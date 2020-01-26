@@ -1,14 +1,14 @@
-﻿using UnityEngine;
-using System.Reflection;
+﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
-using System;
+using UnityEngine;
 
 // Manages the console commands, parses console input and handles execution of commands
 // Supported method parameter types: int, float, bool, string, Vector2, Vector3, Vector4
 
 // Helper class to store important information about a command
-namespace IngameDebugConsole
+namespace Plugins.IngameDebugConsole.Scripts
 {
 	public class ConsoleMethodInfo
 	{

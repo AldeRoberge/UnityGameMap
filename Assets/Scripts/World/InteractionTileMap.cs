@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using World.Map.Tiles;
+using World.Tiles;
 
 namespace World.Map
 {

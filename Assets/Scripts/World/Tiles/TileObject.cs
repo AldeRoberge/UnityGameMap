@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using Object = World.Map.Objects.Object;
 
-namespace World.Map.Tiles
+namespace World.Tiles
 {
     /**
  * A TileObject is an object that is on a tile.
  * It is bound to its TileLoc position.
  */
-    public class TileObject : Object
+    public class TileObject : Objects.Object
     {
         public string GetObjectType()
         {

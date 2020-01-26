@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using World.Map.Tiles;
+using World.Tiles;
 
-namespace World.Map.Objects
+namespace World.Objects
 {
     public class Object : MonoBehaviour
     {
@@ -9,9 +9,7 @@ namespace World.Map.Objects
 
         public TileLoc tileLoc;
 
-
-
-        public void Rotate()
+        public void Rotate90()
         {
             var rotation = transform.rotation;
             transform.rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y + 90f, rotation.eulerAngles.z);

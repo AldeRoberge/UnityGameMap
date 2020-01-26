@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace World.Map.Tiles
+namespace World.Tiles
 {
     /**
      * A GenericTileMap. It is used by :
