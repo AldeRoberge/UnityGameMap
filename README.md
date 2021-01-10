@@ -14,3 +14,9 @@ Possible improvements :
  - More drawing tools (i.e. draw lines, shapes)
 
 Press I to generate a test tilemap.
+
+
+
+New version : 
+![Tiling system](https://i.imgur.com/uMS3Rsp.gif)
+
